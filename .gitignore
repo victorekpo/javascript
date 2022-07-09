@@ -1,0 +1,4 @@
+*.cert
+*.key
+coverage
+node_modules
