@@ -1,0 +1,6 @@
+*.cert
+*.key
+coverage
+node_modules
+dist
+.idea
