@@ -9,28 +9,30 @@ import * as SMS from 'expo-sms';
 import { Card } from 'react-native-paper';
 import * as Speech from 'expo-speech';
 export default function App() {
-const speak = () => {
-    const thingToSay = 'Welcome to Vic\'s app. Here we will do a lot of cool things like trade bots with MetaTrader, make a million dollars, and have a beautiful family.';
+  let result;
+  const speak = () => {
+    const thingToSay = 'Welcome to Vic\'s app.';
+    result = Speech;
     Speech.speak(thingToSay);
+    console.log("This is the tts",result);
   };
-  React.useEffect(() => {
-    let result;
+  React.useEffect(() => {    
     (async () => {
       const { status } = await Brightness.requestPermissionsAsync();
       if (status === 'granted') {
-        Brightness.setSystemBrightnessAsync(0.7);
+        Brightness.setSystemBrightnessAsync(1);
       }
       
     })();
-    console.log(result);
+    
   }, []);
-
+  
   return (
     <View style={styles.container}>
       <Text style={styles.paragraph}>
       </Text>
       <Card>
-       <Button title="Press to hear some words" onPress={speak} />
+       <Button title="Press to hear some words of wisdom." onPress={speak} />
         <AssetExample />
       </Card>
       
