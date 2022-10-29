@@ -4,7 +4,10 @@ export interface IPerson {
     height: string,
     weight: string,
     skills: string[],
-    relations?: IFamily
+    relations?: IFamily,
+    greet(): void,
+    study(): void,
+    calculate(): number
 }
 
 export interface IFamily {

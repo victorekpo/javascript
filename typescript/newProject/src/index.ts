@@ -5,6 +5,7 @@ import { ZipCodeValidator } from "./classes/zipcodeValidator";
 import { helloStr, isLearning, isLearningTS, isRich, myAge, myName } from './basics/basicTypes';
 import { Student } from "./basics/typeAliases";
 import { IStudent } from "./interfaces/people";
+import { PersonClass, StudentClass } from "./classes/peopleClasses";
 
 // Basic Types
 console.log("Testing Basic Types");
@@ -61,3 +62,24 @@ let newStudent: Student = {
     GPA: 4.0
 }
 console.log("this is a new student", newStudent)
+
+// Classes & Extended Classes
+const person01 = {
+    name: 'Vic',
+    age: 35,
+    height: "5'07\"",
+    weight: "175",
+    skills: ["Java", "Typescript"]
+};
+const student01 = {
+    ...person01,
+    major: "Computer Science",
+    minor: "Information Systems",
+    GPA: 4.0
+}
+const newPerson = new PersonClass(person01);
+console.log(newPerson);
+
+const student2 = new StudentClass(student01);
+console.log(student2);
+student2.greet();
