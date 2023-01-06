@@ -1,0 +1,17 @@
+{
+	"extends": "../config/tsconfig-base.json",
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "dist",
+		"paths": {
+			"*": [
+				"node_modules/*",
+				"src/types/*"
+			]
+		},
+		"target": "es2022",
+		"module": "es2020"
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "**/*.spec.ts"]
+}
