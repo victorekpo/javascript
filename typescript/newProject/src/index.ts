@@ -23,6 +23,11 @@ console.log("Testing Interfaces");
 console.log(interfaceTest);
 
 let vicStudent: IStudent = {
+    calculate(): number {
+        return 0;
+    }, greet(): void {
+    }, study(): void {
+    },
     name: "Victor E",
     age: 35,
     height: "5'7",
