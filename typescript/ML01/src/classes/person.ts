@@ -1,4 +1,4 @@
-import { Personality } from 'interfaces.mjs'
+import { Personality } from 'interfaces'
 
 export class Human {
     constructor(

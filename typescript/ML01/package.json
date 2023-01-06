@@ -1,13 +1,13 @@
 {
   "name": "machine-learning-01",
   "version": "1.0.0",
-  "description": "TypeScript Examples",
-  "main": "app.js",
+  "description": "ML-01",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc",
-    "start": "npm run build && node dist/index.mjs",
-    "dev": "tsnd --respawn src/index.mts"
+    "start": "npm run build && node dist/index.js",
+    "dev": "tsnd --respawn src/index.ts"
   },
   "author": "",
   "license": "ISC",

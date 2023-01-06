@@ -1,5 +1,5 @@
-import { Human } from './classes/person.mjs'
-import { Neighborhood } from './classes/places.mjs'
+import { Human } from './classes/person'
+import { Neighborhood } from './classes/places'
 
 // MAIN
 export const main = (): void => {
@@ -11,7 +11,7 @@ export const main = (): void => {
     const myNeighborhood = new Neighborhood('Houston','Texas',{ restaurants: ['Shipleys'], population: 300});
     console.log(JSON.stringify(myNeighborhood, null, 2));
 
-    // interact object meets environmentm
+    // interact object meets environment
 
     // run object actions
 

@@ -1,4 +1,4 @@
-import { Environment, EnvironmentStats } from 'interfaces.mjs';
+import { Environment, EnvironmentStats } from 'interfaces';
 
 export class Neighborhood implements Environment {
     constructor(
