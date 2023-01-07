@@ -9,12 +9,12 @@
         "basketball": "How to shoot a jump shot"
       }
     },
-    "dob": "1/7/2023, 1:22:31 AM",
-    "id": "113A8B63C",
+    "id": "150A0B00C",
     "chronId": 1,
     "name": "vicBot",
+    "dob": "1/7/2023, 1:44:05 AM",
     "personality": "refreshed",
-    "cached": false,
+    "cached": true,
     "residence": {
       "name": "Royals Point",
       "city": "Houston",
@@ -31,35 +31,31 @@
         "baseball": "How to hit it out of the park"
       },
       "library": {
+        "testBook4": [
+          "God is good.",
+          "True"
+        ],
+        "testBook5": [
+          "God is good.",
+          "True",
+          "God is the best.",
+          "God is amazing."
+        ],
         "testBook": [
-          "victor",
-          "is the best",
-          "Jesus",
-          "is King",
-          "You are the pillar that holds my life Lord thank you for everything!"
-        ],
-        "testBook2": [
-          "victor",
-          "is the best"
-        ],
-        "testBook3": [
-          "victor",
-          "is the best",
-          "you are the pillar",
-          "that holds my life",
-          "Jesus"
+          "Lord Jesus",
+          "Have mercy on our souls."
         ]
       }
     },
-    "dob": "1/7/2023, 1:22:32 AM",
-    "id": "145A0B83C",
+    "id": "168A3B90C",
     "chronId": 2,
     "name": "vicBot2",
+    "dob": "1/7/2023, 1:44:06 AM",
     "personality": {
       "mood": "discovery",
       "attitude": "none",
       "currentIQ": 1
     },
-    "cached": false
+    "cached": true
   }
 }

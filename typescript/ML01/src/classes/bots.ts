@@ -109,7 +109,7 @@ export class Robot implements Machine {
 
         fs.watch(watched, (event: any, filename: any) => {
             console.log('event',event, filename);
-            if (filename) {
+            if (filename && event === 'change') {
                 if (fsWait) return;
                 fsWait = setTimeout(() => {
                     fsWait = false;
@@ -137,14 +137,17 @@ export class Robot implements Machine {
     private processInformation(type: any, key: any, value: any): any {
         const formattedValue = value.split('\r\n');
         //console.log(formattedValue,'formattedval')
-        if(!this.brain[type])
-            this.brain[type] = {};
-        if(!this.brain[type][key])
-            this.brain[type][key] = '';
-        if(!this.brain[type][key].includes(value) && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
-            this.brain[type][key] = value;
-        else if(formattedValue.length > 1 || (typeof(this.brain[type][key]) === 'object' && this.brain[type][key]?.length > 0))
-            this.brain[type][key] = Array.from(new Set([...this.brain[type][key],...formattedValue]))
+        if(value) {
+            if(!this.brain[type])
+                this.brain[type] = {};
+            if(!this.brain[type][key])
+                this.brain[type][key] = '';
+            if(!this.brain[type][key].includes(value) && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
+                this.brain[type][key] = value;
+            if(formattedValue.length > 1 || (typeof(this.brain[type][key]) === 'object' && this.brain[type][key]?.length > 0)) {
+                this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),...formattedValue].flat()))
+            }
+        }
 
         const currentBotsInJSON = JSON.parse(fs.readFileSync(botsDB).toString() || '{}');
         const allBots = {
