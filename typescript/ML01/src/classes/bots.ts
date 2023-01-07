@@ -35,7 +35,7 @@ export class Robot implements Machine {
             this.cached = true;
         } else {
             this.dob = new Date().toLocaleString();
-            this.id = (this.dob[0] || '0') + randNum() + '' + randNum() + 'A' + randNum() + 'B' + randNum() + '' + (this.dob[17] || '9') + 'C';
+            this.id = (this.dob[0] || '0') + randNum() + '' + randNum() + 'A' + randNum() + 'B' + randNum() + '' + (this.dob[15] || '9') + 'C';
             this.chronId = Robot.total + 1;
             this.name = name;
             this.personality = { mood: 'discovery', attitude: 'none', currentIQ: 1 }
@@ -109,7 +109,7 @@ export class Robot implements Machine {
 
         fs.watch(watched, (event: any, filename: any) => {
             console.log('event',event, filename);
-            if (filename) {
+            if (filename && event === 'change') {
                 if (fsWait) return;
                 fsWait = setTimeout(() => {
                     fsWait = false;
@@ -139,10 +139,12 @@ export class Robot implements Machine {
         if(!this.brain[type])
             this.brain[type] = {};
         if(!this.brain[type][key])
-            this.brain[type][key] = [];
-        if(!this.brain[type][key].flat().includes(formattedValue.join('\r\n'))) {
-            this.brain[type][key].push(formattedValue);
-        }
+            this.brain[type][key] = '';
+        if(!this.brain[type][key].includes(value) && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
+            this.brain[type][key] = value;
+        if(formattedValue.length > 1 || (typeof(this.brain[type][key]) === 'object' && this.brain[type][key]?.length > 0))
+            this.brain[type][key] = Array.from(new Set([...this.brain[type][key],...formattedValue]))
+
         const currentBotsInJSON = JSON.parse(fs.readFileSync(botsDB).toString() || '{}');
         const allBots = {
             ...currentBotsInJSON,

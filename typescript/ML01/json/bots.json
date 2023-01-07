@@ -2,29 +2,17 @@
   "vicBot": {
     "brain": {
       "coding": {
-        "typescript": [
-          [
-            "Typescript is a very powerful language built as a superset of Javascript"
-          ]
-        ],
-        "react": [
-          [
-            "React library"
-          ]
-        ]
+        "typescript": "Typescript is a very powerful language built as a superset of Javascript",
+        "react": "React library"
       },
       "sports": {
-        "basketball": [
-          [
-            "How to shoot a jump shot"
-          ]
-        ]
+        "basketball": "How to shoot a jump shot"
       }
     },
-    "id": "156A8B09C",
+    "id": "155A0B84C",
     "chronId": 1,
     "name": "vicBot",
-    "dob": "1/6/2023, 11:55:19 PM",
+    "dob": "1/7/2023, 1:08:40 AM",
     "personality": "refreshed",
     "cached": true,
     "residence": {
@@ -40,24 +28,24 @@
   "vicBot2": {
     "brain": {
       "sports": {
-        "baseball": [
-          [
-            "How to hit it out of the park"
-          ]
-        ]
+        "baseball": "How to hit it out of the park"
       },
       "library": {
         "testBook": [
-          [
-            "Typescript is the #1 programming language. Why? Because it is versatile and robust!"
-          ]
-        ]
+          "Typescript is the #1 programming language. Why? Because it is versatile and robust!",
+          "New information",
+          "New informatio",
+          "New informations",
+          ".."
+        ],
+        "testBook2": "another book",
+        "testBook3": "another books"
       }
     },
-    "id": "197A4B30C",
+    "id": "118A9B24C",
     "chronId": 2,
     "name": "vicBot2",
-    "dob": "1/6/2023, 11:55:20 PM",
+    "dob": "1/7/2023, 1:08:41 AM",
     "personality": {
       "mood": "discovery",
       "attitude": "none",
