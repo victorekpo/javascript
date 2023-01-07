@@ -90,21 +90,23 @@ export class Robot implements Machine {
         const fs = require('fs');
         const md5 = require('md5');
 
-        const watchedFile = './';
+        const watchedDir = './library/'
+        const watchedFile = '';
+        const watched = watchedDir.concat(watchedFile);
 
-        console.log(`Watching for file changes on ${watchedFile}`);
+        console.log(`Watching for file changes on ${watched}`);
 
         const md5HashTable: any = {}; // md5 hash table
         let fsWait: any = false;
 
-        fs.watch(watchedFile, (event: any, filename: any) => {
+        fs.watch(watched, (event: any, filename: any) => {
             console.log('event',event, filename);
             if (filename) {
                 if (fsWait) return;
                 fsWait = setTimeout(() => {
                     fsWait = false;
                 }, 100);
-                const newFileContents = fs.readFileSync(filename).toString();
+                const newFileContents = fs.readFileSync(watchedDir.concat(filename)).toString();
 
                 // MD5 Checks
                 const md5Current = md5(newFileContents);
@@ -119,7 +121,7 @@ export class Robot implements Machine {
                 console.log(`File Contents ${newFileContents}`)
                 console.log("MD5 table",md5HashTable)
 
-                this.processInformation(filename,newFileContents[0],newFileContents);
+                this.processInformation('library',filename.split('.')[0],newFileContents);
             }
         });
     }
