@@ -109,27 +109,32 @@ export class Robot implements Machine {
 
         fs.watch(watched, (event: any, filename: any) => {
             console.log('event',event, filename);
-            if (filename && event === 'change') {
+            if (filename) {
                 if (fsWait) return;
                 fsWait = setTimeout(() => {
                     fsWait = false;
                 }, 100);
-                const newFileContents = fs.readFileSync(watchedDir.concat(filename)).toString();
 
-                // MD5 Checks
-                const md5Current = md5(newFileContents);
-                if (md5Current === md5HashTable[filename] || md5HashTable[filename]?.includes(md5Current)) {
-                    return;
+                try {
+                        const newFileContents = fs.readFileSync(watchedDir.concat(filename)).toString();
+                    // MD5 Checks
+                    const md5Current = md5(newFileContents);
+                    if (md5Current === md5HashTable[filename] || md5HashTable[filename]?.includes(md5Current)) {
+                        return;
+                    }
+                    if(!md5HashTable[filename]) md5HashTable[filename] = [md5Current]
+                    else if (md5HashTable[filename]) md5HashTable[filename].push(md5Current);
+                    if(md5HashTable[filename].length > 100) md5HashTable[filename] = md5HashTable[filename].splice(1);
+
+                    console.log(`${filename} file Changed`);
+                    console.log(`File Contents ${newFileContents}`)
+                    console.log("MD5 table",md5HashTable)
+
+                    this.processInformation('library',filename.split('.')[0],newFileContents);
+
+                } catch (err) {
+                    console.log(err)
                 }
-                if(!md5HashTable[filename]) md5HashTable[filename] = [md5Current]
-                else if (md5HashTable[filename]) md5HashTable[filename].push(md5Current);
-                if(md5HashTable[filename].length > 100) md5HashTable[filename] = md5HashTable[filename].splice(1);
-
-                console.log(`${filename} file Changed`);
-                console.log(`File Contents ${newFileContents}`)
-                console.log("MD5 table",md5HashTable)
-
-                this.processInformation('library',filename.split('.')[0],newFileContents);
             }
         });
     }
