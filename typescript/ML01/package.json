@@ -5,9 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && tsc && cd dist && mkdir bin && npx pkg index.js -o bin/runBots",
+    "build": "rm -rf dist && tsc",
+    "build-exec": "npx pkg dist/index.js --target node18-win-x64 --options max_old_space_size=4096 -o dist/runBots",
     "start": "npm run build && node dist/index.js",
-    "dev": "tsnd --respawn src/index.ts"
+    "dev": "cd src && tsnd --respawn index.ts"
   },
   "author": "",
   "license": "ISC",

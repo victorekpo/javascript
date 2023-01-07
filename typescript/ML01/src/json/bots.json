@@ -9,10 +9,10 @@
         "basketball": "How to shoot a jump shot"
       }
     },
-    "id": "150A0B00C",
+    "id": "105A6B03C",
     "chronId": 1,
     "name": "vicBot",
-    "dob": "1/7/2023, 1:44:05 AM",
+    "dob": "1/7/2023, 3:22:30 PM",
     "personality": "refreshed",
     "cached": true,
     "residence": {
@@ -31,30 +31,16 @@
         "baseball": "How to hit it out of the park"
       },
       "library": {
-        "testBook4": [
-          "God is good.",
-          "True"
-        ],
-        "testBook5": [
-          "God is good.",
-          "True",
-          "God is the best.",
-          "God is amazing."
-        ],
-        "testBook": [
-          "Lord Jesus",
-          "Have mercy on our souls."
-        ],
         "songLyrics": [
-          "Make a million here with my guys [people] cause we came from a place that is not nice... yall! #Flashy - Maleek Berry",
-          "Legendary... legendary... algoriddim V.. algoriddim V"
+          "Legendary... legendary... algoriddim V.. algoriddim V",
+          "Champion Sound"
         ]
       }
     },
-    "id": "168A3B90C",
+    "id": "106A0B33C",
     "chronId": 2,
     "name": "vicBot2",
-    "dob": "1/7/2023, 1:44:06 AM",
+    "dob": "1/7/2023, 3:22:31 PM",
     "personality": {
       "mood": "discovery",
       "attitude": "none",

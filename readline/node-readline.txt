@@ -1,0 +1,44 @@
+const readline = require('readline');
+
+function askQuestion(query) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    return new Promise(resolve => rl.question(query, ans => {
+        rl.close();
+        resolve(ans);
+    }))
+}
+
+
+const ans = await askQuestion("Are you sure you want to deploy to PRODUCTION? ")
+
+--
+const readline = require('readline');
+
+function askQuestion(query) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    return new Promise(resolve => rl.question(query, ans => {
+        rl.close();
+        resolve(ans);
+    }))
+}
+
+
+const ans = await askQuestion("Are you sure you want to deploy to PRODUCTION? ")
+
+--
+const readline = require('readline');
+const rl = readline.createInterface({input: process.stdin, output: process.stdout});
+
+rl.question('Press [Y] to continue: ', ans => {
+    if (ans == 'y') console.log('i will continue')
+    else console.log('i will not continue');
+    rl.close();
+});

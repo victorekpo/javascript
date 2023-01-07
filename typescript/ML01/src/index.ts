@@ -65,11 +65,32 @@ export const main = async (): Promise<any> => {
         value: 'How to hit it out of the park'
     })
 
-    // continue running until purpose is reached
+    for(let i=0;i<10000000000000000000;i++) {
+        console.log("test")
+    }
 
+    // continue running until purpose is reached
+    const readline = require('readline');
+
+    function askQuestion(query: any) {
+        const rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout,
+        });
+
+        return new Promise(resolve => rl.question(query, (ans: any) => {
+            rl.close();
+            resolve(ans);
+        }))
+    }
+
+
+    const ans = await askQuestion("Are you sure you want to deploy to PRODUCTION? ")
+    console.log('your answer is',ans)
     // save object to JSON file
 
 }
 
 main()
     .then(res => res);
+

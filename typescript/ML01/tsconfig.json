@@ -10,7 +10,6 @@
 			]
 		}
 	},
-
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "src/json/**/*.json", "src/library/**/*.txt"],
 	"exclude": ["node_modules", "**/*.spec.ts"]
 }
