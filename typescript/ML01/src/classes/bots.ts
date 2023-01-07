@@ -83,21 +83,20 @@ export class Robot implements Machine {
 
     learn(options: any): any {
         const { type, item, value } = options;
-        if(!this.brain[type]) this.brain[type] = {};
-        this.brain[type][item] = value;
-        console.log('whats in my brain',this.brain);
+        this.processInformation(type, item, value);
     }
 
     read(): any {
         const fs = require('fs');
         const md5 = require('md5');
 
-        const watchedFile = './testFile.txt';
+        const watchedFile = './';
 
         console.log(`Watching for file changes on ${watchedFile}`);
 
-        let md5Previous: any = null;
+        const md5HashTable: any = {}; // md5 hash table
         let fsWait: any = false;
+
         fs.watch(watchedFile, (event: any, filename: any) => {
             console.log('event',event, filename);
             if (filename) {
@@ -105,13 +104,36 @@ export class Robot implements Machine {
                 fsWait = setTimeout(() => {
                     fsWait = false;
                 }, 100);
-                const md5Current = md5(fs.readFileSync(watchedFile));
-                if (md5Current === md5Previous) {
+                const newFileContents = fs.readFileSync(filename).toString();
+
+                // MD5 Checks
+                const md5Current = md5(newFileContents);
+                if (md5Current === md5HashTable[filename] || md5HashTable[filename]?.includes(md5Current)) {
                     return;
                 }
-                md5Previous = md5Current;
+                if(!md5HashTable[filename]) md5HashTable[filename] = [md5Current]
+                else if (md5HashTable[filename]) md5HashTable[filename].push(md5Current);
+                if(md5HashTable[filename].length > 100) md5HashTable[filename] = md5HashTable[filename].splice(1);
+
                 console.log(`${filename} file Changed`);
+                console.log(`File Contents ${newFileContents}`)
+                console.log("MD5 table",md5HashTable)
+
+                this.processInformation(filename,newFileContents[0],newFileContents);
             }
         });
     }
+
+    private processInformation(type: any, key: any, value: any): any {
+        const formattedValue = value.split('\r\n');
+        if(!this.brain[type])
+            this.brain[type] = {};
+        if(!this.brain[type][key])
+            this.brain[type][key] = [];
+        if(this.brain[type][key] !== formattedValue && !this.brain[type][key].includes(formattedValue))
+            this.brain[type][key].push(formattedValue);
+
+        console.log('whats in my brain',JSON.stringify(this.brain));
+    }
+
 }

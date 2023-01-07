@@ -44,7 +44,7 @@ export const main = async (): Promise<any> => {
         setTimeout(resolve, (sec || 0)*1000)
     })
     for(let i=0;i<1;i++) {
-        await delay(3);
+        await delay(1);
     }
     vic.getAge();
 
