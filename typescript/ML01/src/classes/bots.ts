@@ -87,4 +87,31 @@ export class Robot implements Machine {
         this.brain[type][item] = value;
         console.log('whats in my brain',this.brain);
     }
+
+    read(): any {
+        const fs = require('fs');
+        const md5 = require('md5');
+
+        const watchedFile = './testFile.txt';
+
+        console.log(`Watching for file changes on ${watchedFile}`);
+
+        let md5Previous: any = null;
+        let fsWait: any = false;
+        fs.watch(watchedFile, (event: any, filename: any) => {
+            console.log('event',event, filename);
+            if (filename) {
+                if (fsWait) return;
+                fsWait = setTimeout(() => {
+                    fsWait = false;
+                }, 100);
+                const md5Current = md5(fs.readFileSync(watchedFile));
+                if (md5Current === md5Previous) {
+                    return;
+                }
+                md5Previous = md5Current;
+                console.log(`${filename} file Changed`);
+            }
+        });
+    }
 }

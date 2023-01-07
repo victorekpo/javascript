@@ -65,6 +65,13 @@ export const main = async (): Promise<any> => {
         value: 'React library'
     })
 
+    vic.learn({
+        type:'sports',
+        item: 'basketball',
+        value: 'How to shoot a jump shot'
+    })
+
+    vic.read();
 
     // continue running until purpose is reached
 
