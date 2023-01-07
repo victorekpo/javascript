@@ -1,16 +1,14 @@
-import { Human } from './classes/persons'
+import { Robot } from './classes/bots'
 import { Neighborhood } from './classes/places'
 
 // MAIN
-export const main = (): void => {
+export const main = async (): Promise<any> => {
     // create object class and object
-    const vic = new Human(
+    const vic = new Robot(
         'vicBot',
-        23,
         {
             attitude: 'chill'
-        },
-        null)
+        })
     console.log("object",vic.name,"is born","\r\n")
     console.log(JSON.stringify(vic, null, 2));
     console.log("\r\n",vic.name,"lives at", vic.residence,"\r\n");
@@ -38,12 +36,32 @@ export const main = (): void => {
         newBankBalance: 200,
         newPersonality: 'refreshed'
     });
+
     console.log("vic's current mood",vic);
+    
+    // run time-taking operation
+    const delay = (sec: number | undefined) => new Promise(resolve => {
+        setTimeout(resolve, (sec || 0)*1000)
+    })
+    for(let i=0;i<1;i++) {
+        await delay(3);
+    }
+    vic.getAge();
+    const vic2 = new Robot(
+        'vicBot2',
+        {
+            attitude: 'chill'
+        })
+
+    console.log(vic2);
 
     // run object actions
 
     // continue running until purpose is reached
 
+    // save object to JSON file
+
 }
 
-main();
+main()
+    .then(res => res);

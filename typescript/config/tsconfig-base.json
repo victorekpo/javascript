@@ -23,6 +23,7 @@
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "resolveJsonModule": true
   }
 }

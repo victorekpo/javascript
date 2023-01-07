@@ -1,6 +1,6 @@
-import { Human } from "../classes/persons";
+import { Robot } from "../classes/bots";
 
-export interface Person {
+export interface Machine {
     bankBalance?: string | undefined
 }
 
@@ -12,7 +12,7 @@ export interface Environment {
     city: string
     state: string
     statistics: EnvironmentStats,
-    affectResident(resident: Human, options: any): void
+    affectResident(resident: Robot, options: any): void
 }
 
 export interface EnvironmentStats {

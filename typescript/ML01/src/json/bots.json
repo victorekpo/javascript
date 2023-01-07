@@ -1,0 +1,11 @@
+[
+  {
+    "id": "0",
+    "chronId": 1,
+    "name": "vicBot0",
+    "dob": "Yesterday",
+    "personality": {
+      "attitude": "sleeping"
+    }
+  }
+]
