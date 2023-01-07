@@ -52,9 +52,12 @@ export const main = async (): Promise<any> => {
         item: 'basketball',
         value: 'How to shoot a jump shot'
     })
-    vic.read();
+
 
     const vic2 = new Robot('vicBot2');
+
+    vic2.read();
+
     vic2.getAge()
     vic2.learn({
         type:'sports',

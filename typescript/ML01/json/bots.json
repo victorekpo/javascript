@@ -1,25 +1,4 @@
 {
-  "vicBot2": {
-    "brain": {
-      "sports": {
-        "baseball": [
-          [
-            "How to hit it out of the park"
-          ]
-        ]
-      }
-    },
-    "id": "115A5B83C",
-    "chronId": 2,
-    "name": "vicBot2",
-    "dob": "1/6/2023, 11:26:13 PM",
-    "personality": {
-      "mood": "discovery",
-      "attitude": "none",
-      "currentIQ": 1
-    },
-    "cached": true
-  },
   "vicBot": {
     "brain": {
       "coding": {
@@ -40,19 +19,62 @@
             "How to shoot a jump shot"
           ]
         ]
+      }
+    },
+    "id": "156A8B09C",
+    "chronId": 1,
+    "name": "vicBot",
+    "dob": "1/6/2023, 11:55:19 PM",
+    "personality": "refreshed",
+    "cached": true,
+    "residence": {
+      "name": "Royals Point",
+      "city": "Houston",
+      "state": "Texas",
+      "restaurants": [
+        "Shipleys"
+      ]
+    },
+    "bankBalance": 200
+  },
+  "vicBot2": {
+    "brain": {
+      "sports": {
+        "baseball": [
+          [
+            "How to hit it out of the park"
+          ]
+        ]
       },
       "library": {
         "testBook": [
           [
-            "Typescript is the #1 programming language. Why? Because it is versatile and robusts"
+            "Typescript is the #1 programming language. Why? Because it is versatile and robust."
+          ],
+          [
+            "Typescript is the #1 programming language. Why? Because it is versatile and robust"
+          ],
+          [
+            "Typescript is the #1 programming language. Why? Because it is versatile and robus"
+          ],
+          [
+            "Typescript is the #1 programming language. Why? Because it is versatile and robu"
+          ],
+          [
+            "Typescript is the #1 programming language. Why? Because it is versatile and robust!"
           ]
         ]
       }
     },
-    "id": "141A2B50C",
-    "chronId": 1,
-    "name": "vicBot",
-    "dob": "1/6/2023, 11:38:10 PM",
-    "personality": "refreshed",
-    "cached": true,
- 
+    "id": "197A4B30C",
+    "chronId": 2,
+    "name": "vicBot2",
+    "dob": "1/6/2023, 11:55:20 PM",
+    "personality": {
+      "mood": "discovery",
+      "attitude": "none",
+      "currentIQ": 1
+    },
+    "cached": true
+  }
+}

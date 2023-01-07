@@ -29,6 +29,7 @@ export class Robot implements Machine {
             this.chronId = botExists.chronId;
             this.name = botExists.name;
             this.dob = botExists.dob;
+            this.brain = botExists.brain;
             this.personality = botExists.personality;
             Robot.total = Math.max(Robot.total, botExists.chronId)
             this.cached = true;
@@ -139,8 +140,9 @@ export class Robot implements Machine {
             this.brain[type] = {};
         if(!this.brain[type][key])
             this.brain[type][key] = [];
-        if(this.brain[type][key] !== formattedValue && !this.brain[type][key].includes(formattedValue))
+        if(!this.brain[type][key].flat().includes(formattedValue.join('\r\n'))) {
             this.brain[type][key].push(formattedValue);
+        }
         const currentBotsInJSON = JSON.parse(fs.readFileSync(botsDB).toString() || '{}');
         const allBots = {
             ...currentBotsInJSON,
