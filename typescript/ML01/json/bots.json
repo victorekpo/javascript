@@ -1,0 +1,58 @@
+{
+  "vicBot2": {
+    "brain": {
+      "sports": {
+        "baseball": [
+          [
+            "How to hit it out of the park"
+          ]
+        ]
+      }
+    },
+    "id": "115A5B83C",
+    "chronId": 2,
+    "name": "vicBot2",
+    "dob": "1/6/2023, 11:26:13 PM",
+    "personality": {
+      "mood": "discovery",
+      "attitude": "none",
+      "currentIQ": 1
+    },
+    "cached": true
+  },
+  "vicBot": {
+    "brain": {
+      "coding": {
+        "typescript": [
+          [
+            "Typescript is a very powerful language built as a superset of Javascript"
+          ]
+        ],
+        "react": [
+          [
+            "React library"
+          ]
+        ]
+      },
+      "sports": {
+        "basketball": [
+          [
+            "How to shoot a jump shot"
+          ]
+        ]
+      },
+      "library": {
+        "testBook": [
+          [
+            "Typescript is the #1 programming language. Why? Because it is versatile and robusts"
+          ]
+        ]
+      }
+    },
+    "id": "141A2B50C",
+    "chronId": 1,
+    "name": "vicBot",
+    "dob": "1/6/2023, 11:38:10 PM",
+    "personality": "refreshed",
+    "cached": true,
+ 

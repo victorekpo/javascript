@@ -1,8 +1,13 @@
-import { Machine, Personality } from 'interfaces'
+import { Machine, Personality } from 'bots'
 import { Neighborhood } from "./places";
-import ExistingBots from '../json/bots.json';
+import * as fs from 'fs';
 
-const searchBot = (botName: string) => ExistingBots.find(({ name }: any) => name === botName);
+const botsDB = './json/bots.json';
+const ExistingBots = JSON.parse(fs.readFileSync(botsDB).toString() || '{}');
+
+const searchBot = (botName: string) => ExistingBots[botName];
+
+const randNum = (): number => Math.floor(Math.random()*10);
 
 export class Robot implements Machine {
     public id: string;
@@ -10,15 +15,16 @@ export class Robot implements Machine {
     public name: string;
     protected dob: string;
     public brain: any = {};
-    public personality: Personality;
+    public personality?: Personality;
     public residence?: Neighborhood;
     public bankBalance?: string;
     public cached?: boolean;
     static total: number = 0;
 
-    constructor(name: string, personality: Personality) {
+    constructor(name: string) {
         const botExists = searchBot(name);
         if(botExists) {
+            console.log("Bot with same name already exists, loading now...")
             this.id = botExists.id;
             this.chronId = botExists.chronId;
             this.name = botExists.name;
@@ -27,14 +33,15 @@ export class Robot implements Machine {
             Robot.total = Math.max(Robot.total, botExists.chronId)
             this.cached = true;
         } else {
-            this.id = '1';
-            this.chronId = Robot.total++;
-            this.name = name;
             this.dob = new Date().toLocaleString();
-            this.personality = personality;
+            this.id = (this.dob[0] || '0') + randNum() + '' + randNum() + 'A' + randNum() + 'B' + randNum() + '' + (this.dob[17] || '9') + 'C';
+            this.chronId = Robot.total + 1;
+            this.name = name;
+            this.personality = { mood: 'discovery', attitude: 'none', currentIQ: 1 }
             this.cached = false;
-            Robot.total = Robot.total++;
-            console.log(`new human, name: ${this.name}, dob: ${this.dob}, personality: ${JSON.stringify(personality, null, 2)}`);
+            Robot.total = Robot.total + 1;
+            console.log("Bot",this.name,"is born","\r\n", JSON.stringify(this,null,2));
+
         }
         console.log('total robots',Robot.total);
     }
@@ -69,8 +76,8 @@ export class Robot implements Machine {
                 diff = 0;
             }
         }
-        const result=`${day ? day + "days" : ""} ${hr ? hr + "hrs" : ""} ${min ? min + "mins" : ""} ${sec ? sec + "secs" : ""} ${ms ? ms + "ms" : ""}`
-        console.log("my age is",result, "\nI was born", this.dob)
+        const result=`${day ? " "+day + "days" : ""}${hr ? " "+hr + "hrs" : ""}${min ? " "+min + "mins" : ""}${sec ? " "+sec + "secs" : ""}${ms ? " "+ms + "ms" : ""}`
+        console.log("my name is",this.name, "my age is"+result+".", "I was born", this.dob)
         return result;
     }
 
@@ -134,6 +141,12 @@ export class Robot implements Machine {
             this.brain[type][key] = [];
         if(this.brain[type][key] !== formattedValue && !this.brain[type][key].includes(formattedValue))
             this.brain[type][key].push(formattedValue);
+        const currentBotsInJSON = JSON.parse(fs.readFileSync(botsDB).toString() || '{}');
+        const allBots = {
+            ...currentBotsInJSON,
+            [this.name]: this
+        };
+        fs.writeFileSync(botsDB, JSON.stringify(allBots, null, 2));
 
         console.log('whats in my brain',JSON.stringify(this.brain));
     }

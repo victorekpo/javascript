@@ -1,29 +1,18 @@
 import { Robot } from './classes/bots'
 import { Neighborhood } from './classes/places'
 
-// MAIN
 export const main = async (): Promise<any> => {
     // create object class and object
-    const vic = new Robot(
-        'vicBot',
-        {
-            attitude: 'chill'
-        })
-    console.log("object",vic.name,"is born","\r\n")
-    console.log(JSON.stringify(vic, null, 2));
+    const vic = new Robot('vicBot');
     console.log("\r\n",vic.name,"lives at", vic.residence,"\r\n");
 
     // create environment
     const myNeighborhood = new Neighborhood(
         'Royals Point',
-        'Houston',
-        'Texas',
         {
-            restaurants: ['Shipleys'],
-            population: 300
-        },
-        {
-            total: 300
+            city: 'Houston',
+            state: 'Texas',
+            restaurants: ['Shipleys']
         });
     console.log(JSON.stringify(myNeighborhood, null, 2),"\r\n");
 
@@ -37,8 +26,6 @@ export const main = async (): Promise<any> => {
         newPersonality: 'refreshed'
     });
 
-    console.log("vic's current mood",vic);
-
     // run time-taking operation
     const delay = (sec: number | undefined) => new Promise(resolve => {
         setTimeout(resolve, (sec || 0)*1000)
@@ -48,30 +35,32 @@ export const main = async (): Promise<any> => {
     }
     vic.getAge();
 
-
-
     // run object actions
-
-      // run learn
+    // run learn
     vic.learn({
           type:'coding',
           item: 'typescript',
           value: 'Typescript is a very powerful language built as a superset of Javascript'
       })
-
     vic.learn({
         type:'coding',
         item: 'react',
         value: 'React library'
     })
-
     vic.learn({
         type:'sports',
         item: 'basketball',
         value: 'How to shoot a jump shot'
     })
-
     vic.read();
+
+    const vic2 = new Robot('vicBot2');
+    vic2.getAge()
+    vic2.learn({
+        type:'sports',
+        item: 'baseball',
+        value: 'How to hit it out of the park'
+    })
 
     // continue running until purpose is reached
 

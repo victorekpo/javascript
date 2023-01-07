@@ -1,1 +1,1 @@
-Hey there
+Typescript is the #1 programming language. Why? Because it is versatile and robusts
