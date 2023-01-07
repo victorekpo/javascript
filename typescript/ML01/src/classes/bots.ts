@@ -139,7 +139,7 @@ export class Robot implements Machine {
         //console.log(formattedValue,'formattedval')
         if(value) {
             if(!this.brain[type])
-                this.brain[type] = {};
+                this.brain[type] = {}; // form thoughts lol
             if(!this.brain[type][key])
                 this.brain[type][key] = '';
             if(!this.brain[type][key].includes(value) && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
