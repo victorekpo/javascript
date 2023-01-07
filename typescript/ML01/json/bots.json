@@ -9,12 +9,12 @@
         "basketball": "How to shoot a jump shot"
       }
     },
-    "id": "155A0B84C",
+    "dob": "1/7/2023, 1:22:31 AM",
+    "id": "113A8B63C",
     "chronId": 1,
     "name": "vicBot",
-    "dob": "1/7/2023, 1:08:40 AM",
     "personality": "refreshed",
-    "cached": true,
+    "cached": false,
     "residence": {
       "name": "Royals Point",
       "city": "Houston",
@@ -32,25 +32,34 @@
       },
       "library": {
         "testBook": [
-          "Typescript is the #1 programming language. Why? Because it is versatile and robust!",
-          "New information",
-          "New informatio",
-          "New informations",
-          ".."
+          "victor",
+          "is the best",
+          "Jesus",
+          "is King",
+          "You are the pillar that holds my life Lord thank you for everything!"
         ],
-        "testBook2": "another book",
-        "testBook3": "another books"
+        "testBook2": [
+          "victor",
+          "is the best"
+        ],
+        "testBook3": [
+          "victor",
+          "is the best",
+          "you are the pillar",
+          "that holds my life",
+          "Jesus"
+        ]
       }
     },
-    "id": "118A9B24C",
+    "dob": "1/7/2023, 1:22:32 AM",
+    "id": "145A0B83C",
     "chronId": 2,
     "name": "vicBot2",
-    "dob": "1/7/2023, 1:08:41 AM",
     "personality": {
       "mood": "discovery",
       "attitude": "none",
       "currentIQ": 1
     },
-    "cached": true
+    "cached": false
   }
 }
