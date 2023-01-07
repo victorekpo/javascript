@@ -9,6 +9,7 @@ export class Robot implements Machine {
     public chronId: number;
     public name: string;
     protected dob: string;
+    public brain: any = {};
     public personality: Personality;
     public residence?: Neighborhood;
     public bankBalance?: string;
@@ -73,10 +74,17 @@ export class Robot implements Machine {
         return result;
     }
 
-    public live(neighborhood: Neighborhood): string {
+    live(neighborhood: Neighborhood): string {
         console.log(`${this.name} just moved into ${neighborhood.name} on ${new Date().toLocaleString()}`);
         this.residence = neighborhood;
         // neighborhood.residents.directory['']
         return neighborhood.toString();
+    }
+
+    learn(options: any): any {
+        const { type, item, value } = options;
+        if(!this.brain[type]) this.brain[type] = {};
+        this.brain[type][item] = value;
+        console.log('whats in my brain',this.brain);
     }
 }

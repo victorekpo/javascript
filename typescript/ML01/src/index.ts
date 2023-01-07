@@ -38,7 +38,7 @@ export const main = async (): Promise<any> => {
     });
 
     console.log("vic's current mood",vic);
-    
+
     // run time-taking operation
     const delay = (sec: number | undefined) => new Promise(resolve => {
         setTimeout(resolve, (sec || 0)*1000)
@@ -47,15 +47,24 @@ export const main = async (): Promise<any> => {
         await delay(3);
     }
     vic.getAge();
-    const vic2 = new Robot(
-        'vicBot2',
-        {
-            attitude: 'chill'
-        })
 
-    console.log(vic2);
+
 
     // run object actions
+
+      // run learn
+    vic.learn({
+          type:'coding',
+          item: 'typescript',
+          value: 'Typescript is a very powerful language built as a superset of Javascript'
+      })
+
+    vic.learn({
+        type:'coding',
+        item: 'react',
+        value: 'React library'
+    })
+
 
     // continue running until purpose is reached
 
