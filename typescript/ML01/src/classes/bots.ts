@@ -140,12 +140,13 @@ export class Robot implements Machine {
     }
 
     private processInformation(type: any, key: any, value: any): any {
+        console.log("VALUE",value)
         const formattedValue = value.split('\r\n');
-        //console.log(formattedValue,'formattedval')
+        console.log(formattedValue)
         if(value) {
-            if(!this.brain[type])
+            if(!this.brain[type] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
                 this.brain[type] = {}; // form thoughts lol
-            if(!this.brain[type][key])
+            if(!this.brain[type][key] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
                 this.brain[type][key] = '';
             if(!this.brain[type][key].includes(value) && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
                 this.brain[type][key] = value;

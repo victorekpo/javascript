@@ -1,5 +1,6 @@
 import { Robot } from './classes/bots'
 import { Neighborhood } from './classes/places'
+import {getSplashTopLogs} from "./utils/events/splashTopLogs";
 
 export const main = async (): Promise<any> => {
     // create object class and object
@@ -64,6 +65,12 @@ export const main = async (): Promise<any> => {
         item: 'baseball',
         value: 'How to hit it out of the park'
     })
+
+     vic2.learn({
+        type: 'computer_events',
+        item: 'splashtop',
+        value: JSON.stringify(await getSplashTopLogs())
+    });
 
     // continue running until purpose is reached
 
