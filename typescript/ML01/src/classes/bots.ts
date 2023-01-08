@@ -162,7 +162,5 @@ export class Robot implements Machine {
         fs.writeFileSync(botsDB, JSON.stringify(allBots, null, 2));
 
         console.log('whats in my brain', JSON.stringify(this.brain)); //util.inspect(this.brain, {showHidden: false, depth: null, colors: true}))
-
     }
-
 }
