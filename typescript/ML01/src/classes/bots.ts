@@ -35,7 +35,7 @@ export class Robot implements Machine {
             this.cached = true;
         } else {
             this.dob = new Date().toLocaleString();
-            this.id = (this.dob[0] || '0') + randNum() + '' + randNum() + 'A' + randNum() + 'B' + randNum() + '' + (this.dob[15] || '9') + 'C';
+            this.id = (this.dob[0] || '0') + randNum() + '' + randNum() + 'A' + randNum() + 'B' + randNum() + '' + (this.dob[16] || '9') + 'C';
             this.chronId = Robot.total + 1;
             this.name = name;
             this.personality = { mood: 'discovery', attitude: 'none', currentIQ: 1 }
