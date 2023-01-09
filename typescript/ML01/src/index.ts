@@ -4,7 +4,7 @@ import { getSplashTopLogs } from "./utils/events/splashTopLogs";
 import { runOnDate } from "./utils/exec/runOnDate";
 
 export const main = async (): Promise<any> => {
-    // create object class and object
+    // create object
     const vic = new Robot('vicBot');
     console.log("\r\n",vic.name,"lives at", vic.residence,"\r\n");
 
@@ -18,7 +18,7 @@ export const main = async (): Promise<any> => {
         });
     console.log(JSON.stringify(myNeighborhood, null, 2),"\r\n");
 
-    // interact object meets environment
+    // interact: object meets environment
     vic.live(myNeighborhood);
     console.log("\r\n",vic.name,"lives at", vic.residence,"\n");
     console.log("\r\nJune 2023, the mayor of Royal Point issues a reward to the residents because of the great economic rising in",myNeighborhood.name,"\n")
@@ -28,13 +28,14 @@ export const main = async (): Promise<any> => {
         newPersonality: 'refreshed'
     });
 
-    // run time-taking operation
+    // test: run time-taking operation
     const delay = (sec: number | undefined) => new Promise(resolve => {
         setTimeout(resolve, (sec || 0)*1000)
     })
     for(let i=0;i<1;i++) {
         await delay(1);
     }
+    // check age
     vic.getAge();
 
     // run object actions
@@ -55,7 +56,7 @@ export const main = async (): Promise<any> => {
         value: 'How to shoot a jump shot'
     })
 
-
+    // new bot
     const vic2 = new Robot('vicBot2');
 
     vic2.read();
@@ -79,7 +80,7 @@ export const main = async (): Promise<any> => {
             type: 'computer_events',
             item: 'splashtop',
             value: JSON.stringify(await getSplashTopLogs()),
-            limit: 3
+            limit: 20
         });
     }
 
