@@ -1,6 +1,7 @@
 import { Robot } from './classes/bots'
 import { Neighborhood } from './classes/places'
-import {getSplashTopLogs} from "./utils/events/splashTopLogs";
+import { getSplashTopLogs } from "./utils/events/splashTopLogs";
+import { runOnDate } from "./utils/exec/runOnDate";
 
 export const main = async (): Promise<any> => {
     // create object class and object
@@ -72,6 +73,9 @@ export const main = async (): Promise<any> => {
         value: JSON.stringify(await getSplashTopLogs())
     });
 
+    runOnDate({
+        min: 10
+    })
     // continue running until purpose is reached
 
     // save object to JSON file
