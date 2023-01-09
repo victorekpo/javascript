@@ -67,27 +67,38 @@ export const main = async (): Promise<any> => {
         value: 'How to hit it out of the park'
     })
 
-     vic2.learn({
-        type: 'computer_events',
-        item: 'splashtop',
-        value: JSON.stringify(await getSplashTopLogs())
-    });
 
+
+
+    // ------------------------------------------
+    // Schedulers
+    // ------------------------------------------
+
+    //Tasks
+    const scheduledTasksEveryMinAt10 = async () => {
+        vic2.learn({
+            type: 'computer_events',
+            item: 'splashtop',
+            value: JSON.stringify(await getSplashTopLogs())
+        });
+    }
+
+
+    // Runners
     runOnDate(
         {
-            min: 5,
-            s: 30,
+            min: 10,
+            s: 15,
             ms: 100,
             interval: 'min',
             loop: true
-        },() => {
-            console.log("It's the top of the hour!", new Date())
+        },async () => {
+            await scheduledTasksEveryMinAt10();
         })
 
     // continue running until purpose is reached
 
-    // save object to JSON file
-
+    // continuous: save object to JSON file while processing
 }
 
 main()

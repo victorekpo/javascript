@@ -41,8 +41,9 @@ export const runOnDate = (date: DateArg, cb: CallableFunction) => {
     } else {
         console.log("msRemaining",msRemaining,printRunTime());
     }
-    const runCallBack = () => {
-        cb();
+    const runCallBack = async () => {
+        console.log("Running task...", new Date());
+        await cb();
         loop && runOnDate(date, cb);
     };
     setTimeout(runCallBack, msRemaining);
