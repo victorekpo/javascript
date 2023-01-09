@@ -1,6 +1,7 @@
 type DateArg = { y?: number, mth?: number, d?: number, h?: number, min?: number, s?: number, ms?: number, interval: string, loop: boolean };
 
 export const runOnDate = (date: DateArg, cb: CallableFunction) => {
+    console.log("\n\n*** Running Scheduled Task... ***");
     const { y, mth, d, h, min, s, ms, interval, loop } = date;
     const now = new Date();
     const year = y || now.getFullYear();
@@ -18,7 +19,7 @@ export const runOnDate = (date: DateArg, cb: CallableFunction) => {
         mth: 2592000000,
         y: 31104000000
     };
-    const printRunTime = () => `running in ${msRemaining / timeMap[interval] || 1} ${interval}s`;
+    const printRunTime = (past: boolean = false) => `running ${past ? 'again' : 'for the first time'} in ${msRemaining / timeMap[interval] || 1} ${interval}s`;
     const newDate = new Date(year, month, day, hour, minute, 0, 0);
     console.log(`Scheduled Date ${newDate.toLocaleDateString()} @ ${newDate.getHours()}:${String(newDate.getMinutes()).padStart(2,"0")}:${s}.${ms}`);
     let msRemaining = (Number(newDate) - Number(now)) + sec + milli;
@@ -34,9 +35,9 @@ export const runOnDate = (date: DateArg, cb: CallableFunction) => {
         };
 
         const nextTime = timeMap[getNextInterval(interval)];
-        console.log(nextTime);
+        //console.log(nextTime);
         msRemaining += nextTime;
-        console.log("it's after the time",printRunTime());
+        console.log("\n** Alert: It is after the scheduled time,",printRunTime(true),"**");
     } else {
         console.log("msRemaining",msRemaining,printRunTime());
     }
