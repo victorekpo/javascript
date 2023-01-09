@@ -67,7 +67,6 @@ export const main = async (): Promise<any> => {
         value: 'How to hit it out of the park'
     })
 
-    setTimeout(() => {console.log("TESTING 123!!!!!"),1000})
 
 
     // ------------------------------------------
