@@ -75,8 +75,8 @@ export const main = async (): Promise<any> => {
 
     runOnDate(
         {
-            min: 55,
-            s: 20,
+            min: 5,
+            s: 30,
             ms: 100,
             interval: 'min',
             loop: true
