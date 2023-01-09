@@ -20,6 +20,7 @@ export const runOnDate = (date: DateArg, cb: CallableFunction) => {
     };
     const printRunTime = () => `running in ${msRemaining / timeMap[interval] || 1} ${interval}s`;
     const newDate = new Date(year, month, day, hour, minute, 0, 0);
+    console.log(`Scheduled Date ${newDate.toLocaleDateString()} @ ${newDate.getHours()}:${newDate.getMinutes()}:${s}.${ms}`);
     let msRemaining = (Number(newDate) - Number(now)) + sec + milli;
 
     if (msRemaining <= 0) { // it's after the time, try later.

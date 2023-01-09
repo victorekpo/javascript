@@ -73,15 +73,17 @@ export const main = async (): Promise<any> => {
         value: JSON.stringify(await getSplashTopLogs())
     });
 
-    runOnDate({
-        min: 55,
-        s: 20,
-        ms: 100,
-        interval: 'min',
-        loop: true
-    },() => {
-        console.log("It's the top of the hour!", new Date())
-    })
+    runOnDate(
+        {
+            min: 55,
+            s: 20,
+            ms: 100,
+            interval: 'min',
+            loop: true
+        },() => {
+            console.log("It's the top of the hour!", new Date())
+        })
+
     // continue running until purpose is reached
 
     // save object to JSON file
