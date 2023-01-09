@@ -74,7 +74,11 @@ export const main = async (): Promise<any> => {
     });
 
     runOnDate({
-        min: 10
+        min: 34,
+        interval: 'min',
+        loop: true
+    },() => {
+        console.log("It's the 34 of the hour!")
     })
     // continue running until purpose is reached
 

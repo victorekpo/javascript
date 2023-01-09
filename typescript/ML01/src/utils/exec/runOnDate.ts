@@ -1,7 +1,7 @@
-type DateArg = { y?: number, mth?: number, d?: number, h?: number, min?: number, s?: number, ms?: number };
+type DateArg = { y?: number, mth?: number, d?: number, h?: number, min?: number, s?: number, ms?: number, interval: string, loop: boolean };
 
-export const runOnDate = (date: DateArg) => {
-    const { y, mth, d, h, min, s, ms } = date;
+export const runOnDate = (date: DateArg, cb: CallableFunction) => {
+    const { y, mth, d, h, min, s, ms, interval, loop } = date;
     const now = new Date();
     const year = y || now.getFullYear();
     const month = mth || now.getMonth();
@@ -10,36 +10,39 @@ export const runOnDate = (date: DateArg) => {
     const minute = min || now.getMinutes();
     const sec = s || now.getSeconds();
     const milli = ms || now.getMilliseconds();
+    const timeMap: any = {
+        s: 1000,
+        min: 60000,
+        h: 3600000,
+        d: 86400000,
+        mth: 2592000000,
+        y: 31104000000
+    };
+    const printRunTime = () => `running in ${msRemaining / timeMap[interval] || 1} ${interval}s`;
 
-    let msRemainining = Number(new Date(year, month, day, hour, minute, sec, milli)) - Number(now);
-    console.log("msRemaining",msRemainining);
+    let msRemaining = Number(new Date(year, month, day, hour, minute, sec, milli)) - Number(now);
 
-    if (msRemainining < 0) { // it's after the time, try later.
-        const nextMap: any = {
-            s: 1000,
-            min: 60000,
-            h: 3600000,
-            d: 86400000,
-            mth: 2592000000,
-            y: 31104000000
-        }
-        const getLeastArg = (): [string, string] => {
-            return ms ? ['ms','s']
-                : (s ? ['s','min']
-                    : (min ? ['min','h']
-                        : (h ? ['h','d']
-                            : (d ? ['d','mth']
-                                : ['mth','y']))))
+    if (msRemaining <= 0) { // it's after the time, try later.
+        const getNextInterval = (i: string) => {
+            return i === 'ms' ? 's'
+                : (i === 's' ? 'min'
+                    : (i === 'min' ? 'h'
+                        : (i === 'h' ? 'd'
+                            : (i === 'd' ? 'mth'
+                                : 'y'))))
         };
 
-        const nextTime = nextMap[getLeastArg()[1]];
+        const nextTime = timeMap[getNextInterval(interval)];
         console.log(nextTime);
-        msRemainining += nextTime;
-        console.log("it's after the time, running again in", msRemainining / nextMap[getLeastArg()[0]] || 1, getLeastArg()[0],'s');
+        msRemaining += nextTime;
+        console.log("it's after the time",printRunTime());
+    } else {
+        console.log("msRemaining",msRemaining,printRunTime());
     }
-
-    setTimeout(() => {
-        console.log(`It's ${date}!`)
-    }, msRemainining);
+    const runCallBack = () => {
+        cb();
+        loop && runOnDate(date, cb);
+    };
+    setTimeout(runCallBack, msRemaining);
 }
 
