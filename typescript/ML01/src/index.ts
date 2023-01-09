@@ -78,7 +78,8 @@ export const main = async (): Promise<any> => {
         vic2.learn({
             type: 'computer_events',
             item: 'splashtop',
-            value: JSON.stringify(await getSplashTopLogs())
+            value: JSON.stringify(await getSplashTopLogs()),
+            limit: 3
         });
     }
 

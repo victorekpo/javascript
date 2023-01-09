@@ -23,7 +23,7 @@
       ]
     },
     "bankBalance": 200,
-    "cached": false
+    "cached": true
   },
   "vicBot2": {
     "id": "193A2B90C",
@@ -36,8 +36,9 @@
       },
       "computer_events": {
         "splashtop": [
-          "{\"time\":\"1/8/2023, 11:49:15 PM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1100294719) has ended. The remote session lasted 00:00:05. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1100294719\",\"00:00:05\",\"3.5.2.4(3.52.4.200)\"],\"processID\":91624,\"level\":4}",
-          "{\"time\":\"1/8/2023, 11:54:36 PM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1100295965) has ended. The remote session lasted 00:00:05. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1100295965\",\"00:00:05\",\"3.5.2.4(3.52.4.200)\"],\"processID\":91624,\"level\":4}"
+          "{\"time\":\"1/9/2023, 12:46:46 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1100307997) has ended. The remote session lasted 00:00:07. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1100307997\",\"00:00:07\",\"3.5.2.4(3.52.4.200)\"],\"processID\":91624,\"level\":4}",
+          "{\"time\":\"1/9/2023, 12:50:52 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1100308877) has ended. The remote session lasted 00:00:06. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1100308877\",\"00:00:06\",\"3.5.2.4(3.52.4.200)\"],\"processID\":91624,\"level\":4}",
+          "{\"time\":\"1/9/2023, 12:51:52 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1100309111) has ended. The remote session lasted 00:00:05. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1100309111\",\"00:00:05\",\"3.5.2.4(3.52.4.200)\"],\"processID\":91624,\"level\":4}"
         ]
       }
     },
@@ -46,6 +47,6 @@
       "attitude": "none",
       "currentIQ": 1
     },
-    "cached": false
+    "cached": true
   }
 }

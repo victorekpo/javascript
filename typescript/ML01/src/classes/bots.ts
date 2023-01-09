@@ -90,8 +90,8 @@ export class Robot implements Machine {
     }
 
     learn(options: any): any {
-        const { type, item, value } = options;
-        this.processInformation(type, item, value);
+        const { type, item, value, limit=-1 } = options;
+        this.processInformation(type, item, value, limit);
     }
 
     read(): any {
@@ -139,7 +139,7 @@ export class Robot implements Machine {
         });
     }
 
-    private processInformation(type: any, key: any, value: any): any {
+    private processInformation(type: any, key: any, value: any, limit: number = -1): any {
         const formattedValue = value.split('\r\n');
 
         const tryToParse = (obj:any) => {
@@ -157,7 +157,7 @@ export class Robot implements Machine {
             }
         };
 
-        if(value) {
+        if(value && limit !== 0) {
             if(!this.brain[type] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
                 this.brain[type] = {}; // form thoughts lol
             if(!this.brain[type][key] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
@@ -166,6 +166,9 @@ export class Robot implements Machine {
                 this.brain[type][key] = value;
             if(formattedValue.length > 1 || (typeof(tryToParse(this.brain[type][key])) === 'object')) {
                 this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),...formattedValue].flat()))
+            }
+            if(limit > 0 && (typeof(tryToParse(this.brain[type][key])) === 'object') && this.brain[type][key].length > limit) {
+                this.brain[type][key].splice(0,1);
             }
         }
 
