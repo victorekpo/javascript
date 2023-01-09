@@ -67,7 +67,7 @@ export const main = async (): Promise<any> => {
         value: 'How to hit it out of the park'
     })
 
-
+    setTimeout(() => {console.log("TESTING 123!!!!!"),1000})
 
 
     // ------------------------------------------
@@ -82,7 +82,6 @@ export const main = async (): Promise<any> => {
             value: JSON.stringify(await getSplashTopLogs())
         });
     }
-
 
     // Runners
     runOnDate(

@@ -98,11 +98,11 @@ export class Robot implements Machine {
         const fs = require('fs');
         const md5 = require('md5');
 
-        const watchedDir = './library/'
+        const watchedDir = 'C:\\Users\\Victor\\projects\\vic\\Programming\\Robot_Library';
         const watchedFile = '';
         const watched = watchedDir.concat(watchedFile);
 
-        console.log(`Watching for file changes on ${watched}`);
+        console.log(`Watching for file changes on ${watched}`, process.cwd());
 
         const md5HashTable: any = {}; // md5 hash table
         let fsWait: any = false;

@@ -9,10 +9,10 @@
         "basketball": "How to shoot a jump shot"
       }
     },
-    "id": "161A7B96C",
+    "id": "124A0B56C",
     "chronId": 1,
     "name": "vicBot",
-    "dob": "1/8/2023, 1:13:06 PM",
+    "dob": "1/8/2023, 9:51:16 PM",
     "personality": "refreshed",
     "cached": true,
     "residence": {
@@ -32,19 +32,12 @@
       },
       "computer_events": {
         "splashtop": "{\"time\":\"/Date(1671497773019)/\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The user victor.ekpo@gmail.com has disconnected a remote session on the remote computer.\\r\\nApp version: 3.5.2.4(3.52.4.200)\\r\\nComputer name: Vic-Laptop\\r\\nError code: N/A\",\"properties\":[{\"Value\":\"victor.ekpo@gmail.com\"},{\"Value\":\"3.5.2.4(3.52.4.200)\"},{\"Value\":\"Vic-Laptop\"}],\"processID\":145072,\"level\":4}"
-      },
-      "library": {
-        "testBook": [
-          "Lord Jesus!",
-          "Have mercy on our souls.",
-          "Amen"
-        ]
       }
     },
-    "id": "153A4B47C",
+    "id": "104A6B87C",
     "chronId": 2,
     "name": "vicBot2",
-    "dob": "1/8/2023, 1:13:07 PM",
+    "dob": "1/8/2023, 9:51:17 PM",
     "personality": {
       "mood": "discovery",
       "attitude": "none",

@@ -46,6 +46,6 @@ export const runOnDate = (date: DateArg, cb: CallableFunction) => {
         await cb();
         loop && runOnDate(date, cb);
     };
-    setTimeout(runCallBack, msRemaining);
+    setTimeout(runCallBack, 5000);
 }
 
