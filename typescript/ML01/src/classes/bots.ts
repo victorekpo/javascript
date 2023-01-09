@@ -102,7 +102,7 @@ export class Robot implements Machine {
         const watchedFile = '';
         const watched = watchedDir.concat(watchedFile);
 
-        console.log(`Watching for file changes on ${watched}`, process.cwd());
+        console.log(`\n**Watching for file changes on ${watched}**\n`);
 
         const md5HashTable: any = {}; // md5 hash table
         let fsWait: any = false;
@@ -140,9 +140,23 @@ export class Robot implements Machine {
     }
 
     private processInformation(type: any, key: any, value: any): any {
-        console.log("VALUE",value)
         const formattedValue = value.split('\r\n');
-        console.log(formattedValue)
+
+        const tryToParse = (obj:any) => {
+            try {
+                const fixObj = JSON.parse(obj);
+                // console.log("obj",fixObj);
+                return fixObj;
+            } catch(err) {
+               // console.log("err1",err)
+            } try {
+                const fixObj = JSON.parse("["+obj+"]");
+                return fixObj;
+            } catch(err) {
+               // console.log("err2",err);
+            }
+        };
+
         if(value) {
             if(!this.brain[type] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
                 this.brain[type] = {}; // form thoughts lol
@@ -150,7 +164,7 @@ export class Robot implements Machine {
                 this.brain[type][key] = '';
             if(!this.brain[type][key].includes(value) && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
                 this.brain[type][key] = value;
-            if(formattedValue.length > 1 || (typeof(this.brain[type][key]) === 'object' && this.brain[type][key]?.length > 0)) {
+            if(formattedValue.length > 1 || (typeof(tryToParse(this.brain[type][key])) === 'object')) {
                 this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),...formattedValue].flat()))
             }
         }
@@ -162,6 +176,6 @@ export class Robot implements Machine {
         };
         fs.writeFileSync(botsDB, JSON.stringify(allBots, null, 2));
 
-        console.log('whats in my brain', JSON.stringify(this.brain)); //util.inspect(this.brain, {showHidden: false, depth: null, colors: true}))
+        console.log(`\nwhats in my brain', ${JSON.stringify(this.brain)}`); //util.inspect(this.brain, {showHidden: false, depth: null, colors: true}))
     }
 }

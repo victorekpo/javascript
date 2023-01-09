@@ -85,10 +85,9 @@ export const main = async (): Promise<any> => {
     // Runners
     runOnDate(
         {
-            min: 10,
             s: 15,
             ms: 100,
-            interval: 'min',
+            interval: 's',
             loop: true
         },async () => {
             await scheduledTasksEveryMinAt10();

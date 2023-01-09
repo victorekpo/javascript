@@ -1,7 +1,7 @@
 type DateArg = { y?: number, mth?: number, d?: number, h?: number, min?: number, s?: number, ms?: number, interval: string, loop: boolean };
 
 export const runOnDate = (date: DateArg, cb: CallableFunction) => {
-    console.log("\n\n*** Running Scheduled Task... ***");
+    console.log("\n\n*** Scheduling Task(s)... ***");
     const { y, mth, d, h, min, s, ms, interval, loop } = date;
     const now = new Date();
     const year = y || now.getFullYear();
@@ -42,7 +42,7 @@ export const runOnDate = (date: DateArg, cb: CallableFunction) => {
         console.log("msRemaining",msRemaining,printRunTime());
     }
     const runCallBack = async () => {
-        console.log("Running task...", new Date());
+        console.log("\n\n*** Scheduling Task(s)... ***", new Date());
         await cb();
         loop && runOnDate(date, cb);
     };
