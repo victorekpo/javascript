@@ -74,7 +74,7 @@ export const main = async (): Promise<any> => {
     // ------------------------------------------
 
     //Tasks
-    const scheduledTasksEveryMinAt10 = async () => {
+    const scheduledTasksEveryMin = async () => {
         vic2.learn({
             type: 'computer_events',
             item: 'splashtop',
@@ -90,7 +90,7 @@ export const main = async (): Promise<any> => {
             interval: 's',
             loop: true
         },async () => {
-            await scheduledTasksEveryMinAt10();
+            await scheduledTasksEveryMin();
         })
 
     // continue running until purpose is reached

@@ -20,7 +20,7 @@ export const getSplashTopLogs = async () => {
         properties: fullResult['Properties'].reduce((props:any, val:any) => [...(props || []),val['Value']], []),
         processID: fullResult['ProcessId'],
         level: fullResult['Level']
-    }
+    };
     console.log(result);
     return result;
 }
