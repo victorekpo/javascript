@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && tsc && cp -a src/library dist/library && tar vzcf MLBots01.tar.gz dist && mv MLBots01.tar.gz dist",
-    "build-exec": "npm run build && npx pkg dist/index.js --target node18-win-x64 --options max_old_space_size=4096 -o dist/runBots",
+    "build-code": "rm -rf dist && tsc && tar vzcf MLBots01.tar.gz dist && mv MLBots01.tar.gz dist",
+    "build": "npm run build-code && npx pkg dist/index.js --target node18-win-x64 --options max_old_space_size=4096 -o dist/runBots",
     "start": "npm run build && cd dist && node index.js",
     "dev": "cd src && tsnd --respawn index.ts"
   },
