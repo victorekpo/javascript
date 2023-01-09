@@ -8,8 +8,8 @@ export const runOnDate = (date: DateArg, cb: CallableFunction) => {
     const day = d || now.getDate();
     const hour = h || now.getHours();
     const minute = min || now.getMinutes();
-    const sec = s || now.getSeconds();
-    const milli = ms || now.getMilliseconds();
+    const sec = (Number(s) * 1000) || 0;
+    const milli = Number(ms) || 0;
     const timeMap: any = {
         s: 1000,
         min: 60000,
@@ -19,8 +19,8 @@ export const runOnDate = (date: DateArg, cb: CallableFunction) => {
         y: 31104000000
     };
     const printRunTime = () => `running in ${msRemaining / timeMap[interval] || 1} ${interval}s`;
-
-    let msRemaining = Number(new Date(year, month, day, hour, minute, sec, milli)) - Number(now);
+    const newDate = new Date(year, month, day, hour, minute, 0, 0);
+    let msRemaining = (Number(newDate) - Number(now)) + sec + milli;
 
     if (msRemaining <= 0) { // it's after the time, try later.
         const getNextInterval = (i: string) => {
