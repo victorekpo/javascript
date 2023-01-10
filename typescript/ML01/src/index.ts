@@ -2,6 +2,7 @@ import { Robot } from './classes/bots'
 import { Neighborhood } from './classes/places'
 import { getSplashTopLogs } from "./utils/events/splashTopLogs";
 import { runOnDate } from "./utils/exec/runOnDate";
+import * as fs from "fs";
 
 export const main = async (): Promise<any> => {
     // create object
@@ -82,6 +83,11 @@ export const main = async (): Promise<any> => {
             value: JSON.stringify(await getSplashTopLogs()),
             limit: 20
         });
+        vic.learn({
+            type: 'quickRead',
+            item: 'library',
+            value: fs.readdirSync('C:\\Users\\Victor\\projects\\vic\\Programming\\Robot_Library').map(x => fs.readFileSync('C:\\Users\\Victor\\projects\\vic\\Programming\\Robot_Library\\'+x).toString())
+        })
     }
 
     // Runners

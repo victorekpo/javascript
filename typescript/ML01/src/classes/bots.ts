@@ -98,7 +98,7 @@ export class Robot implements Machine {
         const fs = require('fs');
         const md5 = require('md5');
 
-        const watchedDir = 'C:\\Users\\Victor\\projects\\vic\\Programming\\Robot_Library';
+        const watchedDir = 'C:\\Users\\Victor\\projects\\vic\\Programming\\Robot_Library\\';
         const watchedFile = '';
         const watched = watchedDir.concat(watchedFile);
 
@@ -139,7 +139,10 @@ export class Robot implements Machine {
         });
     }
 
-    private processInformation(type: any, key: any, value: any, limit: number = -1): any {
+    private processInformation(type: any, key: any, rawValue: any, limit: number = -1): any {
+        const value = rawValue.length > 0 && typeof(rawValue) === 'object' ? rawValue.join('\r\n') : rawValue;
+        console.log("VALUE",value, rawValue)
+
         const formattedValue = value.split('\r\n');
 
         const tryToParse = (obj:any) => {
