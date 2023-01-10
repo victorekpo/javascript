@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-code": "rm -rf dist && tsc && tar vzcf MLBots01.tar.gz dist && mv MLBots01.tar.gz dist",
-    "build": "npm run build-code && npx pkg dist/index.js --target node18-win-x64 --options max_old_space_size=4096 -o dist/runBots",
+    "build": "npm run build-code && node build/exec.js",
     "start": "npm run build && cd dist && node index.js",
     "dev": "cd src && tsnd --respawn index.ts"
   },
@@ -26,6 +26,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "@angablue/exe": "^1.2.0",
     "async": "^3.2.4",
     "dotenv": "^16.0.3",
     "md5": "^2.3.0",
