@@ -1,123 +1,202 @@
 {
-  "vicBot2": {
-    "id": "193A2B90C",
-    "chronId": 2,
-    "name": "vicBot2",
-    "dob": "1/8/2023, 11:54:02 PM",
-    "brain": {
-      "sports": {
-        "baseball": "How to hit it out of the park"
-      },
-      "computer_events": {
-        "splashtop": [
-          "{\"time\":\"1/9/2023, 12:50:52 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1100308877) has ended. The remote session lasted 00:00:06. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1100308877\",\"00:00:06\",\"3.5.2.4(3.52.4.200)\"],\"processID\":91624,\"level\":4}",
-          "{\"time\":\"1/9/2023, 12:51:52 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1100309111) has ended. The remote session lasted 00:00:05. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1100309111\",\"00:00:05\",\"3.5.2.4(3.52.4.200)\"],\"processID\":91624,\"level\":4}",
-          "{\"time\":\"1/9/2023, 1:08:02 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1100313140) has ended. The remote session lasted 00:00:05. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1100313140\",\"00:00:05\",\"3.5.2.4(3.52.4.200)\"],\"processID\":91624,\"level\":4}",
-          "{\"time\":\"1/9/2023, 1:23:00 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1100316983) has ended. The remote session lasted 00:00:06. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1100316983\",\"00:00:06\",\"3.5.2.4(3.52.4.200)\"],\"processID\":91624,\"level\":4}"
-        ]
-      },
-      "library": {
-        "testBook4": [
-          "God is good.",
-          "True",
-          "All the time",
-          "Yes Lord",
-          "Hallelujah"
-        ],
-        "testBook3": [
-          "vic",
-          "God is the best",
-          "you are the pillar",
-          "that holds my life",
-          "Jesus Christ"
-        ]
-      }
-    },
-    "personality": {
-      "mood": "discovery",
-      "attitude": "none",
-      "currentIQ": 1
-    },
-    "cached": true
-  },
   "vicBot": {
-    "id": "110A8B09C",
+    "id": "193A5B20C",
     "chronId": 1,
     "name": "vicBot",
-    "dob": "1/9/2023, 9:11:09 PM",
+    "dob": "1/10/2023, 7:45:00 AM",
     "brain": {
       "coding": {
-        "typescript": "Typescript is a very powerful language built as a superset of Javascript",
-        "react": "React library"
+        "typescript": [
+          {
+            "time": "2023-01-10T13:45:01.686Z",
+            "value": "Typescript is a very powerful language built as a superset of Javascript"
+          }
+        ],
+        "react": [
+          {
+            "time": "2023-01-10T13:45:01.690Z",
+            "value": "React library"
+          }
+        ]
       },
       "sports": {
-        "basketball": "How to shoot a jump shot"
+        "basketball": [
+          {
+            "time": "2023-01-10T13:45:01.692Z",
+            "value": "How to shoot a jump shot"
+          }
+        ]
       },
       "quickRead": {
         "library": [
-          "Machine Learning (ML) with AWS Lambda Part I Multipart Series.",
-          "Part 1: Describe the machine learning model in terms of abstract thinking",
-          "",
-          "This year one of my knowledge-building goals is to learn about machine-learning and artifical intelligence. Other topics that peak my interest that coincide with these are robotics, automation, speech/text recognition, etc. I decided to focus on machine-learning this time around just to gather the conceptual knowledge of machine learning. Perhaps, it is not such a farfetched topic that requires years of Mathematics to begin. Perhaps, machine learning could be applied immediately to our present applications. That is what we will explore in this multipart article series. In this first part, we will describe the machine learning model in the simplest way possible, outlining the pieces needed to create a model. Keep in mind that we will be describing them in terms of abstract pieces, so try not to focus on the nomenclature of each abstract piece, but the function in terms of the others. ",
-          "Definition of Machine Learning",
-          "...",
-          "So first off, what is machine learning? According to (https://github.com/topics/artificial-intelligence?l=javascript), Machine Learning (ML) is The branch of computer science dealing with the reproduction, or mimicking of human-level intelligence, self-awareness, knowledge, conscience, and thought in computer programs.",
-          "Requirements of a ML Model",
-          "-object (machine, learning subject)",
-          "-dynamic environment (sources)",
-          "-goal(overall goal), intentions (normal tendencies/personality), entities (variables, things that change depending on situation)",
-          "Methodology",
-          "-object (machine) serves as a listener/absorber of information (data)",
-          "-sources serve data, new and updated (realtime)",
-          "-sources send event triggers to object (polls/messages/notifications/alerts)",
-          "-object can also request information and spend time consuming information from a particular source (reading/streaming/inputting/digesting)",
-          "-lazy loading of information can also occur (reading data not in realtime, similar to updates that occur in the background, best when other processes/memory usage is low, can be a refreshing of information that is bound to change, to keep accuracy)",
-          "-object maps data accordingly based on NoSQL database schema",
-          "-i.e.",
-          "Database Schema",
-          "Good_vs_Bad {",
-          "  good: [yes, no, maybe, not sure] String dropdown,",
-          "  evil: [yes, no, maybe, not sure] String dropdown",
-          "}",
-          "-assign ratings/percentages to values (hot - cold)",
-          "-use calculations to influence the \"personality\" of the object",
-          "-calculations could come as an aggregate of each database's results.",
-          " -new data comes in",
-          " -object maps it for Good_vs_Bad",
-          " -Data: 'There is a hurricane in Indonesia..'",
-          " -Good_vs_Bad [",
-          "   { id: 01, good: no, evil: not sure }",
-          " -Total_Hurricanes_In_Indonesia [",
-          "   { id: 01, name: 'HurricaneName', chronOrder: 153 }",
-          " -based on the rating of the values, the object can determine the hurricane in Indonesia is not really evil, but is not too good either. (qualitative)",
-          " -based on the chronOrder in the second database, the object can determine it is the 153rd occurence (quantitative)",
-          "Continuity / Growth",
-          "Purpose, Drive, Motivation",
-          "Just like humans require a certain spark to get us out of bed every morning and to achieve our days in top quality, our machine learning model may/or may not require a foundational goal, purpose, or source of motivation. It could be as simple as \"the model wants to learn in order to improve <something>\". This provides a base case for a recursive learning function and other nested recursions and their base cases could be inspired by the drives and motivators. The reason why this is necessary is because it serves as a fallback so that the model doesn't spin in one direction. For example, without purpose, what would stop a model from learning one particular item over and over again for the sole random purpose of setting that record of learning it the most number of times. Purpose has to be guided and laid as a foundation by the developer. Perhaps to be progressed by the model as it improves its discovery, but there must be a foundation for an optimal model.",
-          "Please let me know your thoughts on this article, and any suggestions that can improve this learning model will be greatly appreciated.",
-          "Next: Part 2: Turning the Methodology into Pseudocode.",
-          "Legendary... legendary... algoriddim V.. algoriddim V",
-          "Champion Sound",
-          "Vibes",
-          "Lord Jesus!",
-          "Have mercy on our souls.",
-          "Amen",
-          "victor",
-          "is the best",
-          "you are the pillar",
-          "that holds my life",
-          "Jesus",
-          "God is good.",
-          "True",
-          "God is the best.",
-          "God is amazing.",
-          "Have Mercy Lord",
-          "vic",
-          "God is the best",
-          "All the time",
-          "Yes Lord",
-          "Jesus Christ",
-          "Hallelujah"
+          {
+            "time": "2023-01-10T13:45:15.401Z",
+            "value": [
+              "Machine Learning (ML) with AWS Lambda Part I Multipart Series.",
+              "Part 1: Describe the machine learning model in terms of abstract thinking",
+              "",
+              "This year one of my knowledge-building goals is to learn about machine-learning and artifical intelligence. Other topics that peak my interest that coincide with these are robotics, automation, speech/text recognition, etc. I decided to focus on machine-learning this time around just to gather the conceptual knowledge of machine learning. Perhaps, it is not such a farfetched topic that requires years of Mathematics to begin. Perhaps, machine learning could be applied immediately to our present applications. That is what we will explore in this multipart article series. In this first part, we will describe the machine learning model in the simplest way possible, outlining the pieces needed to create a model. Keep in mind that we will be describing them in terms of abstract pieces, so try not to focus on the nomenclature of each abstract piece, but the function in terms of the others. ",
+              "",
+              "Definition of Machine Learning",
+              "...",
+              "So first off, what is machine learning? According to (https://github.com/topics/artificial-intelligence?l=javascript), Machine Learning (ML) is The branch of computer science dealing with the reproduction, or mimicking of human-level intelligence, self-awareness, knowledge, conscience, and thought in computer programs.",
+              "",
+              "",
+              "Requirements of a ML Model",
+              "...",
+              "-object (machine, learning subject)",
+              "-dynamic environment (sources)",
+              "-goal(overall goal), intentions (normal tendencies/personality), entities (variables, things that change depending on situation)",
+              "",
+              "Methodology",
+              "...",
+              "-object (machine) serves as a listener/absorber of information (data)",
+              "-sources serve data, new and updated (realtime)",
+              "-sources send event triggers to object (polls/messages/notifications/alerts)",
+              "-object can also request information and spend time consuming information from a particular source (reading/streaming/inputting/digesting)",
+              "-lazy loading of information can also occur (reading data not in realtime, similar to updates that occur in the background, best when other processes/memory usage is low, can be a refreshing of information that is bound to change, to keep accuracy)",
+              "-object maps data accordingly based on NoSQL database schema",
+              "-i.e.",
+              "Database Schema",
+              "Good_vs_Bad {",
+              "  good: [yes, no, maybe, not sure] String dropdown,",
+              "  evil: [yes, no, maybe, not sure] String dropdown",
+              "}",
+              "",
+              "-assign ratings/percentages to values (hot - cold)",
+              "-use calculations to influence the \"personality\" of the object",
+              "-calculations could come as an aggregate of each database's results.",
+              "",
+              "-i.e.",
+              " -new data comes in",
+              " -object maps it for Good_vs_Bad",
+              " -Data: 'There is a hurricane in Indonesia..'",
+              " -Good_vs_Bad [",
+              "   { id: 01, good: no, evil: not sure }",
+              " -Total_Hurricanes_In_Indonesia [",
+              "   { id: 01, name: 'HurricaneName', chronOrder: 153 }",
+              " -based on the rating of the values, the object can determine the hurricane in Indonesia is not really evil, but is not too good either. (qualitative)",
+              " -based on the chronOrder in the second database, the object can determine it is the 153rd occurence (quantitative)",
+              "",
+              "Continuity / Growth",
+              "...",
+              "",
+              "Purpose, Drive, Motivation",
+              "Just like humans require a certain spark to get us out of bed every morning and to achieve our days in top quality, our machine learning model may/or may not require a foundational goal, purpose, or source of motivation. It could be as simple as \"the model wants to learn in order to improve <something>\". This provides a base case for a recursive learning function and other nested recursions and their base cases could be inspired by the drives and motivators. The reason why this is necessary is because it serves as a fallback so that the model doesn't spin in one direction. For example, without purpose, what would stop a model from learning one particular item over and over again for the sole random purpose of setting that record of learning it the most number of times. Purpose has to be guided and laid as a foundation by the developer. Perhaps to be progressed by the model as it improves its discovery, but there must be a foundation for an optimal model.",
+              "",
+              "Please let me know your thoughts on this article, and any suggestions that can improve this learning model will be greatly appreciated.",
+              "",
+              "Next: Part 2: Turning the Methodology into Pseudocode.",
+              "Legendary... legendary... algoriddim V.. algoriddim V",
+              "Champion Sound",
+              "Vibes",
+              "Lord Jesus!",
+              "Have mercy on our souls.",
+              "Amen",
+              "Have Mercy Lord",
+              "vic",
+              "God is the best",
+              "vic",
+              "God is the best",
+              "you are the pillar",
+              "that holds my life",
+              "Jesus Christ",
+              "God is good.",
+              "True",
+              "All the time",
+              "Yes Lord",
+              "Hallelujah!",
+              "Amen!",
+              "God is good.",
+              "True",
+              "God is the best.",
+              "God is amazing."
+            ]
+          },
+          {
+            "time": "2023-01-10T13:46:15.370Z",
+            "value": [
+              "Machine Learning (ML) with AWS Lambda Part I Multipart Series.",
+              "Part 1: Describe the machine learning model in terms of abstract thinking",
+              "",
+              "This year one of my knowledge-building goals is to learn about machine-learning and artifical intelligence. Other topics that peak my interest that coincide with these are robotics, automation, speech/text recognition, etc. I decided to focus on machine-learning this time around just to gather the conceptual knowledge of machine learning. Perhaps, it is not such a farfetched topic that requires years of Mathematics to begin. Perhaps, machine learning could be applied immediately to our present applications. That is what we will explore in this multipart article series. In this first part, we will describe the machine learning model in the simplest way possible, outlining the pieces needed to create a model. Keep in mind that we will be describing them in terms of abstract pieces, so try not to focus on the nomenclature of each abstract piece, but the function in terms of the others. ",
+              "",
+              "Definition of Machine Learning",
+              "...",
+              "So first off, what is machine learning? According to (https://github.com/topics/artificial-intelligence?l=javascript), Machine Learning (ML) is The branch of computer science dealing with the reproduction, or mimicking of human-level intelligence, self-awareness, knowledge, conscience, and thought in computer programs.",
+              "",
+              "",
+              "Requirements of a ML Model",
+              "...",
+              "-object (machine, learning subject)",
+              "-dynamic environment (sources)",
+              "-goal(overall goal), intentions (normal tendencies/personality), entities (variables, things that change depending on situation)",
+              "",
+              "Methodology",
+              "...",
+              "-object (machine) serves as a listener/absorber of information (data)",
+              "-sources serve data, new and updated (realtime)",
+              "-sources send event triggers to object (polls/messages/notifications/alerts)",
+              "-object can also request information and spend time consuming information from a particular source (reading/streaming/inputting/digesting)",
+              "-lazy loading of information can also occur (reading data not in realtime, similar to updates that occur in the background, best when other processes/memory usage is low, can be a refreshing of information that is bound to change, to keep accuracy)",
+              "-object maps data accordingly based on NoSQL database schema",
+              "-i.e.",
+              "Database Schema",
+              "Good_vs_Bad {",
+              "  good: [yes, no, maybe, not sure] String dropdown,",
+              "  evil: [yes, no, maybe, not sure] String dropdown",
+              "}",
+              "",
+              "-assign ratings/percentages to values (hot - cold)",
+              "-use calculations to influence the \"personality\" of the object",
+              "-calculations could come as an aggregate of each database's results.",
+              "",
+              "-i.e.",
+              " -new data comes in",
+              " -object maps it for Good_vs_Bad",
+              " -Data: 'There is a hurricane in Indonesia..'",
+              " -Good_vs_Bad [",
+              "   { id: 01, good: no, evil: not sure }",
+              " -Total_Hurricanes_In_Indonesia [",
+              "   { id: 01, name: 'HurricaneName', chronOrder: 153 }",
+              " -based on the rating of the values, the object can determine the hurricane in Indonesia is not really evil, but is not too good either. (qualitative)",
+              " -based on the chronOrder in the second database, the object can determine it is the 153rd occurence (quantitative)",
+              "",
+              "Continuity / Growth",
+              "...",
+              "",
+              "Purpose, Drive, Motivation",
+              "Just like humans require a certain spark to get us out of bed every morning and to achieve our days in top quality, our machine learning model may/or may not require a foundational goal, purpose, or source of motivation. It could be as simple as \"the model wants to learn in order to improve <something>\". This provides a base case for a recursive learning function and other nested recursions and their base cases could be inspired by the drives and motivators. The reason why this is necessary is because it serves as a fallback so that the model doesn't spin in one direction. For example, without purpose, what would stop a model from learning one particular item over and over again for the sole random purpose of setting that record of learning it the most number of times. Purpose has to be guided and laid as a foundation by the developer. Perhaps to be progressed by the model as it improves its discovery, but there must be a foundation for an optimal model.",
+              "",
+              "Please let me know your thoughts on this article, and any suggestions that can improve this learning model will be greatly appreciated.",
+              "",
+              "Next: Part 2: Turning the Methodology into Pseudocode.",
+              "Legendary... legendary... algoriddim V.. algoriddim V",
+              "Champion Sound",
+              "Vibes",
+              "Lord Jesus!",
+              "Have mercy on our souls.",
+              "Amen",
+              "Have Mercy Lord",
+              "vic",
+              "God is the best",
+              "vic",
+              "God is the best",
+              "you are the pillar",
+              "that holds my life",
+              "Jesus Christ",
+              "God is good.",
+              "True",
+              "All the time",
+              "Yes Lord",
+              "Hallelujah!",
+              "Amen!",
+              "God is good.",
+              "True",
+              "God is the best.",
+              "God is amazing."
+            ]
+          }
         ]
       }
     },
@@ -131,6 +210,73 @@
       ]
     },
     "bankBalance": 200,
+    "cached": true
+  },
+  "vicBot2": {
+    "id": "118A4B00C",
+    "chronId": 2,
+    "name": "vicBot2",
+    "dob": "1/10/2023, 7:45:01 AM",
+    "brain": {
+      "sports": {
+        "baseball": [
+          {
+            "time": "2023-01-10T13:45:01.701Z",
+            "value": "How to hit it out of the park"
+          }
+        ]
+      },
+      "computer_events": {
+        "splashtop": [
+          {
+            "time": "2023-01-10T13:45:15.392Z",
+            "value": "{\"time\":\"1/10/2023, 7:21:30 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1101307426) has ended. The remote session lasted 00:00:03. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1101307426\",\"00:00:03\",\"3.5.2.4(3.52.4.200)\"],\"processID\":10544,\"level\":4}"
+          }
+        ]
+      },
+      "library": {
+        "testBook4": [
+          {
+            "time": "2023-01-10T13:45:24.521Z",
+            "value": [
+              "God is good.",
+              "True",
+              "All the time",
+              "Yes Lord",
+              "Hallelujah!",
+              "Amen!"
+            ]
+          },
+          {
+            "time": "2023-01-10T13:45:34.045Z",
+            "value": [
+              "God is good.",
+              "True",
+              "All the time",
+              "Yes Lord",
+              "Hallelujah!",
+              "Amen"
+            ]
+          },
+          {
+            "time": "2023-01-10T13:45:51.100Z",
+            "value": [
+              "God is good.",
+              "True",
+              "All the time",
+              "Yes Lord",
+              "Hallelujah!",
+              "Amen!"
+            ]
+          }
+        ]
+      }
+    },
+    "personality": {
+      "mood": "discovery",
+      "attitude": "none",
+      "currentIQ": 1
+    },
     "cached": true
   }
 }

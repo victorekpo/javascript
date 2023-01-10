@@ -164,11 +164,17 @@ export class Robot implements Machine {
             if(!this.brain[type] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
                 this.brain[type] = {}; // form thoughts lol
             if(!this.brain[type][key] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
-                this.brain[type][key] = '';
-            if(!this.brain[type][key].includes(value) && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
-                this.brain[type][key] = value;
-            if(formattedValue.length > 1 || (typeof(tryToParse(this.brain[type][key])) === 'object')) {
-                this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),...formattedValue].flat()))
+                this.brain[type][key] = [];
+            // console.log(this.brain[type][key]);
+            // console.log(this.brain[type]?.[key]?.find(({value:val}:any) => {
+            //     console.log("val",val);
+            //     console.log("value",formattedValue);
+            //     return (val===formattedValue || val ===value)
+            // }))
+            if(!this.brain[type]?.[key]?.find(({value:val}:any) => val===formattedValue || val===value) && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
+                this.brain[type][key] = [{time: new Date(), value}];
+            if(formattedValue.length > 1 || (typeof(tryToParse(this.brain[type][key]?.[value])) === 'object')) {
+                this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),{time: new Date(), value: formattedValue}].flat()))
             }
             if(limit > 0 && (typeof(tryToParse(this.brain[type][key])) === 'object') && this.brain[type][key].length > limit) {
                 this.brain[type][key].splice(0,1);
