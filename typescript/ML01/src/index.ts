@@ -86,7 +86,7 @@ export const main = async (): Promise<any> => {
         vic.learn({
             type: 'quickRead',
             item: 'library',
-            value: fs.readdirSync('C:\\Users\\Victor\\projects\\vic\\Programming\\Robot_Library').map(x => fs.readFileSync('C:\\Users\\Victor\\projects\\vic\\Programming\\Robot_Library\\'+x).toString())
+            value: fs.readdirSync('C:\\Users\\Victor\\projects\\vic\\Programming\\Robot_Library').map(x => x+'\r\n'+fs.readFileSync('C:\\Users\\Victor\\projects\\vic\\Programming\\Robot_Library\\'+x).toString())
         })
     }
 

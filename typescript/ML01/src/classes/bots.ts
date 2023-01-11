@@ -161,23 +161,37 @@ export class Robot implements Machine {
         };
 
         if(value && limit !== 0) {
-            if(!this.brain[type] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
+            if (!this.brain[type] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
                 this.brain[type] = {}; // form thoughts lol
-            if(!this.brain[type][key] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
+            if (!this.brain[type][key] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
                 this.brain[type][key] = [];
-            const itemExists = this.brain[type]?.[key]?.find(({value:val}:any) => ([val].flat().join('~')==[formattedValue].flat().join('~') || val === formattedValue|| val ===value))
+            const itemExists = this.brain[type]?.[key]?.find(({value: val}: any) => ([val].flat().join('~') == [formattedValue].flat().join('~')
+                    || val === formattedValue || val === value))
+                || formattedValue.split('\r\n').every((line:any) => this.brain[type][key].includes({value:line})
+                    || this.brain[type][key].reduce((exists: any,check: any) => {
+                        if(check['value'].split('\r\n').find((i: any) => i === line))
+                            exists = true;
+                        return !!exists
+                    },false)
+                )
+            console.log('exists?',!!itemExists);
             if(!itemExists && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
                 this.brain[type][key] = [{time: new Date(), value}];
             if(!itemExists && (formattedValue.length > 1 || (typeof(tryToParse(this.brain[type][key]?.[value])) === 'object'))) {
                 const toAdd = [formattedValue].flat().join('~').split(/\r\n|~/)
-                    .filter(x => { return !this.brain[type][key]
+                    .filter(x => { return x.includes('@@') ? true : !this.brain[type][key]
                         .find(({value}: any) => {
-                        //    console.log("COMPARISON",value,"COMPARISON 2", x);
-                        //    console.log("term found",value.split('\r\n')
-                        //        .find((y: any)=> y===x));
-                            return x === value || value.split('\r\n')
-                                .find((y: any)=> y===x) })} ).join('\r\n');
-                this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),{time: new Date(), value: toAdd}].flat()))
+                           // console.log("COMPARISON",value,"COMPARISON 2", x);
+                           //  console.log("term found",value.split('\r\n')
+                           //      .find((y: any)=> {console.log(y,x,y===x);return y===x}));
+                            return x === value || (value.split('\r\n')
+                                .find((y: any)=> y===x))
+                        })
+                    }).join('\r\n') || null
+                console.log('value TO ADD',toAdd)
+                if(toAdd) {
+                    this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),{time: new Date(), value: toAdd}].flat()))
+                }
             }
             if(limit > 0 && (typeof(tryToParse(this.brain[type][key])) === 'object') && this.brain[type][key].length > limit) {
                 this.brain[type][key].splice(0,1);
