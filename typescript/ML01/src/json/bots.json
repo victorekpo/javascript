@@ -1,20 +1,20 @@
 {
   "vicBot": {
-    "id": "193A5B20C",
+    "id": "147A8B2:C",
     "chronId": 1,
     "name": "vicBot",
-    "dob": "1/10/2023, 7:45:00 AM",
+    "dob": "1/10/2023, 11:01:09 PM",
     "brain": {
       "coding": {
         "typescript": [
           {
-            "time": "2023-01-10T13:45:01.686Z",
+            "time": "2023-01-11T05:01:10.359Z",
             "value": "Typescript is a very powerful language built as a superset of Javascript"
           }
         ],
         "react": [
           {
-            "time": "2023-01-10T13:45:01.690Z",
+            "time": "2023-01-11T05:01:10.362Z",
             "value": "React library"
           }
         ]
@@ -22,7 +22,7 @@
       "sports": {
         "basketball": [
           {
-            "time": "2023-01-10T13:45:01.692Z",
+            "time": "2023-01-11T05:01:10.364Z",
             "value": "How to shoot a jump shot"
           }
         ]
@@ -30,172 +30,8 @@
       "quickRead": {
         "library": [
           {
-            "time": "2023-01-10T13:45:15.401Z",
-            "value": [
-              "Machine Learning (ML) with AWS Lambda Part I Multipart Series.",
-              "Part 1: Describe the machine learning model in terms of abstract thinking",
-              "",
-              "This year one of my knowledge-building goals is to learn about machine-learning and artifical intelligence. Other topics that peak my interest that coincide with these are robotics, automation, speech/text recognition, etc. I decided to focus on machine-learning this time around just to gather the conceptual knowledge of machine learning. Perhaps, it is not such a farfetched topic that requires years of Mathematics to begin. Perhaps, machine learning could be applied immediately to our present applications. That is what we will explore in this multipart article series. In this first part, we will describe the machine learning model in the simplest way possible, outlining the pieces needed to create a model. Keep in mind that we will be describing them in terms of abstract pieces, so try not to focus on the nomenclature of each abstract piece, but the function in terms of the others. ",
-              "",
-              "Definition of Machine Learning",
-              "...",
-              "So first off, what is machine learning? According to (https://github.com/topics/artificial-intelligence?l=javascript), Machine Learning (ML) is The branch of computer science dealing with the reproduction, or mimicking of human-level intelligence, self-awareness, knowledge, conscience, and thought in computer programs.",
-              "",
-              "",
-              "Requirements of a ML Model",
-              "...",
-              "-object (machine, learning subject)",
-              "-dynamic environment (sources)",
-              "-goal(overall goal), intentions (normal tendencies/personality), entities (variables, things that change depending on situation)",
-              "",
-              "Methodology",
-              "...",
-              "-object (machine) serves as a listener/absorber of information (data)",
-              "-sources serve data, new and updated (realtime)",
-              "-sources send event triggers to object (polls/messages/notifications/alerts)",
-              "-object can also request information and spend time consuming information from a particular source (reading/streaming/inputting/digesting)",
-              "-lazy loading of information can also occur (reading data not in realtime, similar to updates that occur in the background, best when other processes/memory usage is low, can be a refreshing of information that is bound to change, to keep accuracy)",
-              "-object maps data accordingly based on NoSQL database schema",
-              "-i.e.",
-              "Database Schema",
-              "Good_vs_Bad {",
-              "  good: [yes, no, maybe, not sure] String dropdown,",
-              "  evil: [yes, no, maybe, not sure] String dropdown",
-              "}",
-              "",
-              "-assign ratings/percentages to values (hot - cold)",
-              "-use calculations to influence the \"personality\" of the object",
-              "-calculations could come as an aggregate of each database's results.",
-              "",
-              "-i.e.",
-              " -new data comes in",
-              " -object maps it for Good_vs_Bad",
-              " -Data: 'There is a hurricane in Indonesia..'",
-              " -Good_vs_Bad [",
-              "   { id: 01, good: no, evil: not sure }",
-              " -Total_Hurricanes_In_Indonesia [",
-              "   { id: 01, name: 'HurricaneName', chronOrder: 153 }",
-              " -based on the rating of the values, the object can determine the hurricane in Indonesia is not really evil, but is not too good either. (qualitative)",
-              " -based on the chronOrder in the second database, the object can determine it is the 153rd occurence (quantitative)",
-              "",
-              "Continuity / Growth",
-              "...",
-              "",
-              "Purpose, Drive, Motivation",
-              "Just like humans require a certain spark to get us out of bed every morning and to achieve our days in top quality, our machine learning model may/or may not require a foundational goal, purpose, or source of motivation. It could be as simple as \"the model wants to learn in order to improve <something>\". This provides a base case for a recursive learning function and other nested recursions and their base cases could be inspired by the drives and motivators. The reason why this is necessary is because it serves as a fallback so that the model doesn't spin in one direction. For example, without purpose, what would stop a model from learning one particular item over and over again for the sole random purpose of setting that record of learning it the most number of times. Purpose has to be guided and laid as a foundation by the developer. Perhaps to be progressed by the model as it improves its discovery, but there must be a foundation for an optimal model.",
-              "",
-              "Please let me know your thoughts on this article, and any suggestions that can improve this learning model will be greatly appreciated.",
-              "",
-              "Next: Part 2: Turning the Methodology into Pseudocode.",
-              "Legendary... legendary... algoriddim V.. algoriddim V",
-              "Champion Sound",
-              "Vibes",
-              "Lord Jesus!",
-              "Have mercy on our souls.",
-              "Amen",
-              "Have Mercy Lord",
-              "vic",
-              "God is the best",
-              "vic",
-              "God is the best",
-              "you are the pillar",
-              "that holds my life",
-              "Jesus Christ",
-              "God is good.",
-              "True",
-              "All the time",
-              "Yes Lord",
-              "Hallelujah!",
-              "Amen!",
-              "God is good.",
-              "True",
-              "God is the best.",
-              "God is amazing."
-            ]
-          },
-          {
-            "time": "2023-01-10T13:46:15.370Z",
-            "value": [
-              "Machine Learning (ML) with AWS Lambda Part I Multipart Series.",
-              "Part 1: Describe the machine learning model in terms of abstract thinking",
-              "",
-              "This year one of my knowledge-building goals is to learn about machine-learning and artifical intelligence. Other topics that peak my interest that coincide with these are robotics, automation, speech/text recognition, etc. I decided to focus on machine-learning this time around just to gather the conceptual knowledge of machine learning. Perhaps, it is not such a farfetched topic that requires years of Mathematics to begin. Perhaps, machine learning could be applied immediately to our present applications. That is what we will explore in this multipart article series. In this first part, we will describe the machine learning model in the simplest way possible, outlining the pieces needed to create a model. Keep in mind that we will be describing them in terms of abstract pieces, so try not to focus on the nomenclature of each abstract piece, but the function in terms of the others. ",
-              "",
-              "Definition of Machine Learning",
-              "...",
-              "So first off, what is machine learning? According to (https://github.com/topics/artificial-intelligence?l=javascript), Machine Learning (ML) is The branch of computer science dealing with the reproduction, or mimicking of human-level intelligence, self-awareness, knowledge, conscience, and thought in computer programs.",
-              "",
-              "",
-              "Requirements of a ML Model",
-              "...",
-              "-object (machine, learning subject)",
-              "-dynamic environment (sources)",
-              "-goal(overall goal), intentions (normal tendencies/personality), entities (variables, things that change depending on situation)",
-              "",
-              "Methodology",
-              "...",
-              "-object (machine) serves as a listener/absorber of information (data)",
-              "-sources serve data, new and updated (realtime)",
-              "-sources send event triggers to object (polls/messages/notifications/alerts)",
-              "-object can also request information and spend time consuming information from a particular source (reading/streaming/inputting/digesting)",
-              "-lazy loading of information can also occur (reading data not in realtime, similar to updates that occur in the background, best when other processes/memory usage is low, can be a refreshing of information that is bound to change, to keep accuracy)",
-              "-object maps data accordingly based on NoSQL database schema",
-              "-i.e.",
-              "Database Schema",
-              "Good_vs_Bad {",
-              "  good: [yes, no, maybe, not sure] String dropdown,",
-              "  evil: [yes, no, maybe, not sure] String dropdown",
-              "}",
-              "",
-              "-assign ratings/percentages to values (hot - cold)",
-              "-use calculations to influence the \"personality\" of the object",
-              "-calculations could come as an aggregate of each database's results.",
-              "",
-              "-i.e.",
-              " -new data comes in",
-              " -object maps it for Good_vs_Bad",
-              " -Data: 'There is a hurricane in Indonesia..'",
-              " -Good_vs_Bad [",
-              "   { id: 01, good: no, evil: not sure }",
-              " -Total_Hurricanes_In_Indonesia [",
-              "   { id: 01, name: 'HurricaneName', chronOrder: 153 }",
-              " -based on the rating of the values, the object can determine the hurricane in Indonesia is not really evil, but is not too good either. (qualitative)",
-              " -based on the chronOrder in the second database, the object can determine it is the 153rd occurence (quantitative)",
-              "",
-              "Continuity / Growth",
-              "...",
-              "",
-              "Purpose, Drive, Motivation",
-              "Just like humans require a certain spark to get us out of bed every morning and to achieve our days in top quality, our machine learning model may/or may not require a foundational goal, purpose, or source of motivation. It could be as simple as \"the model wants to learn in order to improve <something>\". This provides a base case for a recursive learning function and other nested recursions and their base cases could be inspired by the drives and motivators. The reason why this is necessary is because it serves as a fallback so that the model doesn't spin in one direction. For example, without purpose, what would stop a model from learning one particular item over and over again for the sole random purpose of setting that record of learning it the most number of times. Purpose has to be guided and laid as a foundation by the developer. Perhaps to be progressed by the model as it improves its discovery, but there must be a foundation for an optimal model.",
-              "",
-              "Please let me know your thoughts on this article, and any suggestions that can improve this learning model will be greatly appreciated.",
-              "",
-              "Next: Part 2: Turning the Methodology into Pseudocode.",
-              "Legendary... legendary... algoriddim V.. algoriddim V",
-              "Champion Sound",
-              "Vibes",
-              "Lord Jesus!",
-              "Have mercy on our souls.",
-              "Amen",
-              "Have Mercy Lord",
-              "vic",
-              "God is the best",
-              "vic",
-              "God is the best",
-              "you are the pillar",
-              "that holds my life",
-              "Jesus Christ",
-              "God is good.",
-              "True",
-              "All the time",
-              "Yes Lord",
-              "Hallelujah!",
-              "Amen!",
-              "God is good.",
-              "True",
-              "God is the best.",
-              "God is amazing."
-            ]
+            "time": "2023-01-11T05:09:15.415Z",
+            "value": "Machine Learning (ML) with AWS Lambda Part I Multipart Series.\r\nPart 1: Describe the machine learning model in terms of abstract thinking\r\n\r\nThis year one of my knowledge-building goals is to learn about machine-learning and artifical intelligence. Other topics that peak my interest that coincide with these are robotics, automation, speech/text recognition, etc. I decided to focus on machine-learning this time around just to gather the conceptual knowledge of machine learning. Perhaps, it is not such a farfetched topic that requires years of Mathematics to begin. Perhaps, machine learning could be applied immediately to our present applications. That is what we will explore in this multipart article series. In this first part, we will describe the machine learning model in the simplest way possible, outlining the pieces needed to create a model. Keep in mind that we will be describing them in terms of abstract pieces, so try not to focus on the nomenclature of each abstract piece, but the function in terms of the others. \r\n\r\nDefinition of Machine Learning\r\n...\r\nSo first off, what is machine learning? According to (https://github.com/topics/artificial-intelligence?l=javascript), Machine Learning (ML) is The branch of computer science dealing with the reproduction, or mimicking of human-level intelligence, self-awareness, knowledge, conscience, and thought in computer programs.\r\n\r\n\r\nRequirements of a ML Model\r\n...\r\n-object (machine, learning subject)\r\n-dynamic environment (sources)\r\n-goal(overall goal), intentions (normal tendencies/personality), entities (variables, things that change depending on situation)\r\n\r\nMethodology\r\n...\r\n-object (machine) serves as a listener/absorber of information (data)\r\n-sources serve data, new and updated (realtime)\r\n-sources send event triggers to object (polls/messages/notifications/alerts)\r\n-object can also request information and spend time consuming information from a particular source (reading/streaming/inputting/digesting)\r\n-lazy loading of information can also occur (reading data not in realtime, similar to updates that occur in the background, best when other processes/memory usage is low, can be a refreshing of information that is bound to change, to keep accuracy)\r\n-object maps data accordingly based on NoSQL database schema\r\n-i.e.\r\nDatabase Schema\r\nGood_vs_Bad {\r\n  good: [yes, no, maybe, not sure] String dropdown,\r\n  evil: [yes, no, maybe, not sure] String dropdown\r\n}\r\n\r\n-assign ratings/percentages to values (hot - cold)\r\n-use calculations to influence the \"personality\" of the object\r\n-calculations could come as an aggregate of each database's results.\r\n\r\n-i.e.\r\n -new data comes in\r\n -object maps it for Good_vs_Bad\r\n -Data: 'There is a hurricane in Indonesia..'\r\n -Good_vs_Bad [\r\n   { id: 01, good: no, evil: not sure }\r\n -Total_Hurricanes_In_Indonesia [\r\n   { id: 01, name: 'HurricaneName', chronOrder: 153 }\r\n -based on the rating of the values, the object can determine the hurricane in Indonesia is not really evil, but is not too good either. (qualitative)\r\n -based on the chronOrder in the second database, the object can determine it is the 153rd occurence (quantitative)\r\n\r\nContinuity / Growth\r\n...\r\n\r\nPurpose, Drive, Motivation\r\nJust like humans require a certain spark to get us out of bed every morning and to achieve our days in top quality, our machine learning model may/or may not require a foundational goal, purpose, or source of motivation. It could be as simple as \"the model wants to learn in order to improve <something>\". This provides a base case for a recursive learning function and other nested recursions and their base cases could be inspired by the drives and motivators. The reason why this is necessary is because it serves as a fallback so that the model doesn't spin in one direction. For example, without purpose, what would stop a model from learning one particular item over and over again for the sole random purpose of setting that record of learning it the most number of times. Purpose has to be guided and laid as a foundation by the developer. Perhaps to be progressed by the model as it improves its discovery, but there must be a foundation for an optimal model.\r\n\r\nPlease let me know your thoughts on this article, and any suggestions that can improve this learning model will be greatly appreciated.\r\n\r\nNext: Part 2: Turning the Methodology into Pseudocode.\r\nLegendary... legendary... algoriddim V.. algoriddim V\r\nChampion Sound\r\nVibes\r\nLord Jesus!\r\nHave mercy on our souls.\r\nAmen\r\nHave Mercy Lord\r\nvic\r\nGod is the best\r\nvic\r\nGod is the best\r\nyou are the pillar\r\nthat holds my life\r\nJesus Christ\r\nGod is good.\r\nTrue\r\nAll the time\r\nYes Lord\r\nHallelujah!\r\nAmen!\r\nGod is good.\r\nTrue\r\nGod is the best.\r\nGod is amazing."
           }
         ]
       }
@@ -213,61 +49,40 @@
     "cached": true
   },
   "vicBot2": {
-    "id": "118A4B00C",
+    "id": "159A2B8:C",
     "chronId": 2,
     "name": "vicBot2",
-    "dob": "1/10/2023, 7:45:01 AM",
+    "dob": "1/10/2023, 11:01:10 PM",
     "brain": {
       "sports": {
         "baseball": [
           {
-            "time": "2023-01-10T13:45:01.701Z",
+            "time": "2023-01-11T05:01:10.372Z",
             "value": "How to hit it out of the park"
-          }
-        ]
-      },
-      "computer_events": {
-        "splashtop": [
-          {
-            "time": "2023-01-10T13:45:15.392Z",
-            "value": "{\"time\":\"1/10/2023, 7:21:30 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1101307426) has ended. The remote session lasted 00:00:03. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1101307426\",\"00:00:03\",\"3.5.2.4(3.52.4.200)\"],\"processID\":10544,\"level\":4}"
           }
         ]
       },
       "library": {
         "testBook4": [
           {
-            "time": "2023-01-10T13:45:24.521Z",
-            "value": [
-              "God is good.",
-              "True",
-              "All the time",
-              "Yes Lord",
-              "Hallelujah!",
-              "Amen!"
-            ]
+            "time": "2023-01-11T05:02:13.645Z",
+            "value": "God is good.\r\nTrue\r\nAll the time\r\nYes Lord\r\nHallelujah!\r\nAmen!\r\n1"
           },
           {
-            "time": "2023-01-10T13:45:34.045Z",
-            "value": [
-              "God is good.",
-              "True",
-              "All the time",
-              "Yes Lord",
-              "Hallelujah!",
-              "Amen"
-            ]
+            "time": "2023-01-11T05:07:15.582Z",
+            "value": "God is good.\r\nTrue\r\nAll the time\r\nYes Lord\r\nHallelujah!\r\nAmen!\r\n2"
           },
           {
-            "time": "2023-01-10T13:45:51.100Z",
-            "value": [
-              "God is good.",
-              "True",
-              "All the time",
-              "Yes Lord",
-              "Hallelujah!",
-              "Amen!"
-            ]
+            "time": "2023-01-11T05:08:49.712Z",
+            "value": "God is good.\r\nTrue\r\nAll the time\r\nYes Lord\r\nHallelujah!\r\nAmen!"
+          }
+        ]
+      },
+      "computer_events": {
+        "splashtop": [
+          {
+            "time": "2023-01-11T05:09:15.405Z",
+            "value": "{\"time\":\"1/10/2023, 7:21:30 AM\",\"machineName\":\"DESKTOP-5R3J9M7\",\"message\":\"The Splashtop remote session (1101307426) has ended. The remote session lasted 00:00:03. App version: 3.5.2.4(3.52.4.200)\",\"properties\":[\"1101307426\",\"00:00:03\",\"3.5.2.4(3.52.4.200)\"],\"processID\":10544,\"level\":4}"
           }
         ]
       }

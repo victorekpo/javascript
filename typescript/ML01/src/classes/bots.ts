@@ -143,7 +143,7 @@ export class Robot implements Machine {
         const value = rawValue.length > 0 && typeof(rawValue) === 'object' ? rawValue.join('\r\n') : rawValue;
         console.log("VALUE",value, rawValue)
 
-        const formattedValue = value.split('\r\n');
+        const formattedValue = value//.split('\r\n');
 
         const tryToParse = (obj:any) => {
             try {
@@ -165,15 +165,10 @@ export class Robot implements Machine {
                 this.brain[type] = {}; // form thoughts lol
             if(!this.brain[type][key] || this.brain[type][key] === '{}' || this.brain[type][key] === '[]')
                 this.brain[type][key] = [];
-            // console.log(this.brain[type][key]);
-            // console.log(this.brain[type]?.[key]?.find(({value:val}:any) => {
-            //     console.log("val",val);
-            //     console.log("value",formattedValue);
-            //     return (val===formattedValue || val ===value)
-            // }))
-            if(!this.brain[type]?.[key]?.find(({value:val}:any) => val===formattedValue || val===value) && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
+            const itemExists = this.brain[type]?.[key]?.find(({value:val}:any) => ([val].flat().join('~')==[formattedValue].flat().join('~') || val === formattedValue|| val ===value))
+            if(!itemExists && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
                 this.brain[type][key] = [{time: new Date(), value}];
-            if(formattedValue.length > 1 || (typeof(tryToParse(this.brain[type][key]?.[value])) === 'object')) {
+            if(!itemExists && (formattedValue.length > 1 || (typeof(tryToParse(this.brain[type][key]?.[value])) === 'object'))) {
                 this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),{time: new Date(), value: formattedValue}].flat()))
             }
             if(limit > 0 && (typeof(tryToParse(this.brain[type][key])) === 'object') && this.brain[type][key].length > limit) {
