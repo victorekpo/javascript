@@ -141,7 +141,7 @@ export class Robot implements Machine {
 
     private processInformation(type: any, key: any, rawValue: any, limit: number = -1): any {
         const value = rawValue.length > 0 && typeof(rawValue) === 'object' ? rawValue.join('\r\n') : rawValue;
-        console.log("VALUE",value, rawValue)
+       // console.log("VALUE",value, rawValue)
 
         const formattedValue = value//.split('\r\n');
 
@@ -169,7 +169,15 @@ export class Robot implements Machine {
             if(!itemExists && formattedValue.length === 1 && this.brain[type][key]?.length < 1)
                 this.brain[type][key] = [{time: new Date(), value}];
             if(!itemExists && (formattedValue.length > 1 || (typeof(tryToParse(this.brain[type][key]?.[value])) === 'object'))) {
-                this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),{time: new Date(), value: formattedValue}].flat()))
+                const toAdd = [formattedValue].flat().join('~').split(/\r\n|~/)
+                    .filter(x => { return !this.brain[type][key]
+                        .find(({value}: any) => {
+                        //    console.log("COMPARISON",value,"COMPARISON 2", x);
+                        //    console.log("term found",value.split('\r\n')
+                        //        .find((y: any)=> y===x));
+                            return x === value || value.split('\r\n')
+                                .find((y: any)=> y===x) })} ).join('\r\n');
+                this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),{time: new Date(), value: toAdd}].flat()))
             }
             if(limit > 0 && (typeof(tryToParse(this.brain[type][key])) === 'object') && this.brain[type][key].length > limit) {
                 this.brain[type][key].splice(0,1);
