@@ -195,7 +195,7 @@ export class Robot implements Machine {
                             return x === value || (value.split('\r\n')
                                 .find((y: any)=> y===x))
                         })
-                    }).join('\r\n').split(/(\@file:.*\r\n|@file:.*\....|@end:)/).filter((x,i,arr)=> x !== '' && x !== '\r\n' && (!arr[i]?.includes('@file') || arr[i+1])).join('\r\n') || null
+                    }).join('\r\n').split(/(\@file:.*\r\n|@file:.*\....|@end:)/).filter((x,i,arr)=> x !== '' && x !== '\r\n' && (!arr[i]?.includes('@file') || arr[i+1])).join('\r\n').replace('\r\n\r\n','\r\n') || null
                 console.log('value TO ADD',toAdd)
                 if(toAdd) {
                     this.brain[type][key] = Array.from(new Set([(this.brain[type][key].length > 0 ? this.brain[type][key] : []),{time: new Date(), value: toAdd}].flat()))
