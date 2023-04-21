@@ -2,6 +2,13 @@ const request = require('request')
 const JSONStream = require('JSONStream')
 const es = require('event-stream')
 
+// WITHOUT STREAM this large dataset takes a long time to download and load
+// request({url: 'https://dl.dropboxusercontent.com/s/gxbsj271j5pevec/trades.json'}, function (error, response, body) {
+//     console.error('error:', error); // Print the error if one occurred
+//     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+//     console.log('body:', body); // Print the HTML for the Google homepage.
+// })
+
 // console.time('json-streamer')
 
 const parser = JSONStream.parse('.') //emit parts that match this path (any element of the rows array)
