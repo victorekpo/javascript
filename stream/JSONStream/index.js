@@ -12,11 +12,11 @@ const es = require('event-stream')
 // console.time('json-streamer')
 
 const parser = JSONStream.parse('.') //emit parts that match this path (any element of the rows array)
-    // . - matches current path
-    // rows - matches { rows: .. }
-    // rows.docs - matches { rows: { docs: .. } }
-    // ..rows - matches [{rows: ...}]
-    // ..rows.docs - matches [ { rows: { docs: ... } }]
+// . - matches current path
+// rows - matches { rows: .. }
+// rows.docs - matches { rows: { docs: .. } }
+// ..rows - matches [{rows: ...}]
+// ..rows.docs - matches [ { rows: { docs: ... } }]
 
 // large files
 // https://raw.githubusercontent.com/json-iterator/test-data/master/large-file.json
