@@ -1,4 +1,4 @@
-{"total_rows":129,"offset":0,"rows":[
+[{"total_rows":129,"offset":0,"rows":[
   { "id":"change1_0.6995461115147918"
   , "key":"change1_0.6995461115147918"
   , "value":{"rev":"1-e240bae28c7bb3667f02760f6398d508"}
@@ -15,4 +15,4 @@
   , "hello":2
   }
   },
-]}
+]}]
