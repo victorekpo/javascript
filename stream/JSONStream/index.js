@@ -4,7 +4,7 @@ const es = require('event-stream')
 
 // console.time('json-streamer')
 
-const parser = JSONStream.parse('..id') //emit parts that match this path (any element of the rows array)
+const parser = JSONStream.parse('.') //emit parts that match this path (any element of the rows array)
     // . - matches current path
     // rows - matches { rows: .. }
     // rows.docs - matches { rows: { docs: .. } }
@@ -21,4 +21,5 @@ const logger = es.mapSync(function (data) {  //create a stream that logs to stde
 req.pipe(parser)
 parser.pipe(logger)
 
+req.pipe(logger)
 // console.timeEnd('json-streamer')
