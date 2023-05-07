@@ -6,7 +6,8 @@ const sock = new zmq.Pull();
 const main = async () => {
     try {
         sock.connect("tcp://localhost:7777");
-        for await (const [msg] of sock) {
+
+        for await (const msg of sock) {
             console.log(`Received Job ${msg.toString()}`);
         }
     } catch (err) {
@@ -15,3 +16,21 @@ const main = async () => {
     }
 };
 main();
+
+
+
+
+
+
+
+
+
+
+// DO NOT NEED
+//             sock.disconnect("tcp://localhost:7777")
+// await new Promise(resolve => {
+//     setTimeout(() => {
+//         sock.connect("tcp://localhost:7777");
+//         resolve()
+//     }, 0)
+// });

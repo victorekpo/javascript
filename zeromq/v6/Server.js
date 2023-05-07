@@ -9,7 +9,7 @@ const main = async () => {
         for (let job = 1; job <= 100; job++) {
             console.log(`Sending Job ${job}`)
             await sock.send(job);
-            await new Promise((resolve) => setTimeout(resolve, 0));
+            await new Promise((resolve) => setTimeout(resolve, 500));
         }
     } catch (err) {
         console.error(err);
@@ -17,3 +17,5 @@ const main = async () => {
     }
 };
 main();
+
+// server timeout > client timeout * 5
