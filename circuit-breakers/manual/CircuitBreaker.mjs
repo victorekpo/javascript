@@ -5,16 +5,19 @@ const CircuitBreakerStates = {
     HALF: "HALF"
 }
 
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+
 export class CircuitBreaker {
-    request = null;
     state = CircuitBreakerStates.CLOSED;
     failureCount = 0;
     failureThreshold = 5; // number of failures to determine when to open the circuit
     resetAfter = 50000;
     timeout = 3000; // declare request failure if the function takes more than 5 seconds
 
-    constructor(request, options) {
-        this.request = request;
+    constructor(options) {
         this.state = CircuitBreakerStates.CLOSED; // allowing requests to go through by default
         this.failureCount = 0;
         // allow request to go through after the circuit has been opened for resetAfter seconds
@@ -24,17 +27,29 @@ export class CircuitBreaker {
         this.timeout = options.timeout || 3000;
     }
 
-    async fire() {
+    async fire(request) {
         if (this.state === CircuitBreakerStates.OPENED) {
             if (this.resetAfter <= Date.now()) {
                 this.state = CircuitBreakerStates.HALF;
             } else {
-                throw new Error('Circuit is in open state right now. Please try again later.');
+                // throw new Error('Circuit is in open state right now. Please try again later.');
+                return('Error')
             }
         }
         try {
-            const response = await(this.request);
-            if (response.status === 200 || response.status === 201) return this.success(response.data);
+
+            const myFunction = () => {
+                console.log("FAILURE!", this.failureCount, 'Timeout')
+                return this.failure('Timeout')
+            }
+            const timer = setTimeout(myFunction, this.timeout)
+
+            const response = await(request);
+            if (response?.status === 200 || response?.status === 201) {
+               clearTimeout(timer);
+
+                return this.success(response.data);
+            }
             console.log("FAILURE!", this.failureCount, response.status, response.data)
             return this.failure(response.data);
         }
