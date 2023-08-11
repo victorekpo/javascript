@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  mindsdb:
+    image: mindsdb/mindsdb:23.7.4.1
+    ports:
+      - "47334:47334"
+      - "47335:47335"
+    volumes:
+      - "./mdb_data:/root/mdb_storage"
+    networks:
+      - teknixcovpc
+
+networks:
+  teknixcovpc:
+    driver: bridge
+  no-internet:
+    driver: bridge
+    internal: true #Block internet access
