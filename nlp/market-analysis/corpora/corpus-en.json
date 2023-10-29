@@ -1,0 +1,34 @@
+{
+  "name": "BUY/SELL News Classifier",
+  "locale": "en-US",
+  "data": [
+    {
+      "intent": "BUY",
+      "utterances": [
+        "Euro Analysis: EUR/USD Bounces Back to Near Flat on the Week"
+      ],
+      "answers": [
+        "Prepare to buy this token"
+      ]
+    },
+    {
+      "intent": "SELL",
+      "utterances": [
+        "SNB Vice-Chairman says further rate hikes may be needed"
+      ],
+      "answers": [
+        "Prepare to sell this token"
+      ]
+    },
+    {
+      "intent": "WAIT",
+      "utterances": [
+        "GBPJPY extends sideways pattern below 50-day SMA",
+	"US, China Agree to Work on Setting Up Biden, Xi November Meeting"
+      ],
+      "answers": [
+        "Wait to get more information about this token"
+      ]
+    }
+  ]
+}
