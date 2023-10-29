@@ -5,7 +5,8 @@
     {
       "intent": "BUY",
       "utterances": [
-        "Euro Analysis: EUR/USD Bounces Back to Near Flat on the Week"
+        "Euro Analysis: EUR/USD Bounces Back to Near Flat on the Week",
+	"Japan's Chief Cabinet Sec. Matsuno: We will assist with the oil release, but we're still working out the details. #JPY"
       ],
       "answers": [
         "Prepare to buy this token"
@@ -14,7 +15,9 @@
     {
       "intent": "SELL",
       "utterances": [
-        "SNB Vice-Chairman says further rate hikes may be needed"
+        "SNB Vice-Chairman says further rate hikes may be needed",
+	"EU's Foreign Min. Borrell: The fifth package of sanctions against Russia could arrive as soon as tomorrow. #EUR",
+	"US Senate has enough votes to ban oil imports from Russia, vote still ongoing. #Oil"
       ],
       "answers": [
         "Prepare to sell this token"
