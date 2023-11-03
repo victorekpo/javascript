@@ -1,4 +1,12 @@
-Performances?
+Performance Tests
+
+Article # 1
+https://bug1172313.bmoattachments.org/attachment.cgi?id=8616443
+https://bugzilla.mozilla.org/show_bug.cgi?id=1172313
+-Issue closed with speed being okay
+
+Article #2
+
 Recently, I have seen in the react-hook-form implementation, that Bill decided not to use Proxy anymore for the tracking of who watch the state of the form because of performances reasons.
 
 Are the performances so bad? Let’s try to measure the performance cost when retrieving the value of a simple property.
@@ -112,3 +120,4 @@ Proxy enables a lot of features, thanks to them, you can extract some logic that
 There is a TC39 proposal to add natively Decorators to javascript, looks promising, which will enable some other possibilities. For example to log / measure performance of function, … in an easy way: with a @Logger or @Performance (with the right implementation behind these annotations).
 
 Source: https://www.romaintrotard.com/posts/proxy-in-js-what-the-hell#other-traps
+
