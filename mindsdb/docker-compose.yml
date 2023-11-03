@@ -1,19 +1,34 @@
 version: '3.1'
 
 services:
-  mindsdb:
-    image: mindsdb/mindsdb:23.7.4.1
-    ports:
-      - "47334:47334"
-      - "47335:47335"
-    volumes:
-      - "./mdb_data:/root/mdb_storage"
-    networks:
-      - teknixcovpc
+#  mindsdb:
+#    image: mindsdb/mindsdb:23.7.4.1
+#    ports:
+#      - "47334:47334"
+#      - "47335:47335"
+#    volumes:
+#      - "./mdb_data:/root/mdb_storage"
+#    networks:
+#      - teknixcovpc
 
-networks:
-  teknixcovpc:
-    driver: bridge
-  no-internet:
-    driver: bridge
-    internal: true #Block internet access
+  db:
+    image: mysql
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+#networks:
+#  teknixcovpc:
+#    driver: bridge
+#  no-internet:
+#    driver: bridge
+#    internal: true #Block internet access
