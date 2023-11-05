@@ -18,7 +18,7 @@ window.addEventListener('keydown', event => {
   }
   // When the client hits ENTER on their keyboard
   const inputValue = currentInput.value; // Get the value of the input
-    if (event.which === 13) {
+    if (event.key === "Enter") {
     console.log("Enter key pressed! Input value:", inputValue);
   }
   console.log("key pressed", inputValue);
