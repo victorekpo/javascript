@@ -23,3 +23,6 @@ net.train([
 
 // This is how we run the network to get a prediction
 const output = net.run({ r: 1, g: 0.4, b: 0 }); // { white: 0.81, black: 0.18 }
+console.log(output);
+
+// https://metacognitive.me/how-to-do-text-classification-with-javascript/
