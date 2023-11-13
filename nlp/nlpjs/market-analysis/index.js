@@ -1,6 +1,6 @@
 const { dockStart } = require('@nlpjs/basic');
 
-const phrase = "US, China Agree to Work on Setting Up Biden, Xi November Meeting";
+const phrase = "US Senate votes to ban Russian energy imports over the Ukraine invasion, sends ban back to House.";
 
 (async () => {
   const dock = await dockStart();
