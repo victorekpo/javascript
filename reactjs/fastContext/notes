@@ -1,0 +1,19 @@
+Original code by Jack Herrington (on youtube)
+-appended with comments for a better understanding
+
+-Strategy: we can't use useState,
+A way to hold our data at the top level but in a way when it updates it doesn't automatically cause a rerender pass from there on down.
+-can we use useReducer? no, useReducer has the same semantics as useState, everything upwards down rerenders.
+-We CAN use useRef, associates data with a component but when that data changes it doesn't force a rerender, however how will the other components know of the update? 
+-Along with useRef, we can use a pub/sub model for communication between the ref and the component. 
+-useState is used at the component level within the custom hook useStore to subscribe and update the reference as needed, essentially this makes the ref only rerender to the component that is calling it and not every component in between
+
+Major Takeaways
+
+-Context as a Store
+-useRef as a dispatcher
+-pub/sub model for communication
+-prevents rerendering every time the data changes
+-pub/sub model subscribes to a particular component
+
+
